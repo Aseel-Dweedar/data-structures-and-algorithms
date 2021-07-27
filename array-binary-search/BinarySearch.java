@@ -26,24 +26,24 @@ public class BinarySearch {
         int n8 = 55;
 
 
-        BinarySearch(arr1 , n1, 2);
-        BinarySearch(arr2 , n2, -1);
-        BinarySearch(arr3 , n3, 6);
-        BinarySearch(arr4 , n4, 0);
-        BinarySearch(arr5 , n5, 1);
-        BinarySearch(arr6 , n6, -1);
-        BinarySearch(arr7 , n7, 0);
-        BinarySearch(arr8 , n8, 4);
+        BinarySearch(arr1 , n1 );
+        BinarySearch(arr2 , n2 );
+        BinarySearch(arr3 , n3 );
+        BinarySearch(arr4 , n4);
+        BinarySearch(arr5 , n5 );
+        BinarySearch(arr6 , n6 );
+        BinarySearch(arr7 , n7 );
+        BinarySearch(arr8 , n8 );
 
     }
-    public static int BinarySearch(int[] arr , int n, int shouldbe) {
+    public static int BinarySearch(int[] arr , int n) {
         int idx = -1;
         if (arr.length == 0) return -1;
         if (arr.length <= 2) {
             for (int i = 0; i < arr.length; i++) {
                 if (n == arr[i]){
                     idx = i;
-                    System.out.println(idx + " Should "+shouldbe);
+                    System.out.println(idx);
                     return idx;
                 }
             }
@@ -66,7 +66,7 @@ public class BinarySearch {
         if (n == arr[arrMid]){
             idx = arrMid;
         }
-        System.out.println(idx + " Should be "+shouldbe);
+        System.out.println(idx);
         return idx;
     }
 }
