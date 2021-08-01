@@ -4,7 +4,7 @@
 
 Singly linked lists are the simplest type of linked list, Refers to the number of references the node has. A Singly linked list means that there is only one reference.
 
-## Challenge
+## Challenge 1:
 
 <!-- Description of the challenge -->
 
@@ -36,3 +36,50 @@ Method that accept a value and Indicates whether that value exists as a Node’s
 
 Returns: a string representing all the values in the Linked List, formatted as:
 `"{ a } -> { b } -> { c } -> NULL"`
+
+<hr>
+<br>
+
+## Challenge Add Node At Last :
+
+**append()**: adds a new node with the given value to the end of the list
+
+## Whiteboard Process
+
+![add last](./img/addLast.png)
+
+## Approach & Efficiency
+
+loop,
+time : O(n)
+scape : O(2n)
+
+## Challenge Add Node Before specific node:
+
+**insertBefore()**
+method to add a new node with the given new value immediately before the first node that has the value specified.
+
+## Whiteboard Process
+
+![add last](./img/addBefore.png)
+
+## Approach & Efficiency
+
+loop,
+time : O(n)
+scape : O(2n)
+
+## Challenge Add Node After specific node:
+
+**insertAfter()**
+method to add a new node with the given new value immediately after the first node that has the value specified
+
+## Whiteboard Process
+
+![add after](./img/addAfter.png)
+
+## Approach & Efficiency
+
+loop,
+time : O(n)
+scape : O(2n)
