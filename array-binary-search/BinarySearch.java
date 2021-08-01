@@ -14,7 +14,7 @@ public class BinarySearch {
         int n4 = 1;
 
         int[] arr5= {1,2,3,4,5};
-        int n5 = 2;
+        int n5 = 8;
 
         int[] arr6= {};
         int n6 = -80;
@@ -25,48 +25,70 @@ public class BinarySearch {
         int[] arr8 = {11, 22, 33, 44, 55};
         int n8 = 55;
 
+        int[] arr9 = {11, 22, 33};
+        int n9 = 11;
 
-        BinarySearch(arr1 , n1 );
-        BinarySearch(arr2 , n2 );
-        BinarySearch(arr3 , n3 );
-        BinarySearch(arr4 , n4);
-        BinarySearch(arr5 , n5 );
-        BinarySearch(arr6 , n6 );
-        BinarySearch(arr7 , n7 );
-        BinarySearch(arr8 , n8 );
+        int[] arr10 = {11, 22, 33};
+        int n10 = 33;
+
+        int[] arr11 = {11, 22, 33};
+        int n11 = 22;
+
+        int[] arr12 = {11, 22, 33, 44, 55, 66};
+        int n12 = 11;
+
+        int[] arr13= {1,2,3,4,5};
+        int n13 = 8;
+
+        int[] arr14= {1,2,3,4,5};
+        int n14 = 4;
+
+        BinarySearch(arr1 , n1 , 2);
+        BinarySearch(arr2 , n2, -1);
+        BinarySearch(arr3 , n3 , 6);
+        BinarySearch(arr4 , n4 , 0);
+        BinarySearch(arr5 , n5, -1);
+        BinarySearch(arr6 , n6, -1);
+        BinarySearch(arr7 , n7 , 0);
+        BinarySearch(arr8 , n8 , 4);
+        BinarySearch(arr9 , n9 , 0);
+        BinarySearch(arr10 ,n10, 2);
+        BinarySearch(arr11 ,n11, 1);
+        BinarySearch(arr12 ,n12, 0);
+        BinarySearch(arr13,n13, -1);
+        BinarySearch(arr14 ,n14, 3);
 
     }
-    public static int BinarySearch(int[] arr , int n) {
+
+    public static int BinarySearch(int[] arr , int n, int shouldBe) {
         int idx = -1;
-        if (arr.length == 0) return -1;
+        if (arr.length == 0) {
+            System.out.println(idx + " should be "+ shouldBe);
+            return idx;
+        }
         if (arr.length <= 2) {
             for (int i = 0; i < arr.length; i++) {
                 if (n == arr[i]){
                     idx = i;
-                    System.out.println(idx);
+                    System.out.println(idx + " should be "+ shouldBe);
                     return idx;
                 }
             }
         }
-        int arrMid =(int) Math.ceil((double) arr.length/2);
         int leftIdx = 0;
         int rigthIdx = arr.length - 1;
-        while (rigthIdx >= leftIdx && arrMid != leftIdx && arrMid != rigthIdx ){
+        while (rigthIdx >= leftIdx){
+        int arrMid = (int) (double)(leftIdx+rigthIdx)/2;
             if (n == arr[arrMid]){
                 idx = arrMid;
                 break;
             }
             if (n < arr[arrMid]) {
-                rigthIdx = arrMid;
+                rigthIdx = arrMid-1;
             } else {
-                leftIdx = arrMid;
+                leftIdx = arrMid+1;
             }
-            arrMid =  (int)(Math.ceil(  (double)  (rigthIdx+leftIdx)/2)  );
-         }
-        if (n == arr[arrMid]){
-            idx = arrMid;
         }
-        System.out.println(idx);
+        System.out.println(idx + " should be "+ shouldBe);
         return idx;
-    }
-}
+    }}

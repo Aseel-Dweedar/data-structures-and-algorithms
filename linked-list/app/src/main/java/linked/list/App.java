@@ -8,12 +8,17 @@ public class App {
     public static void main(String[] args) {
 
         LinkedList myList = new LinkedList();
-        myList.insert(8);
-        myList.insert(9);
-        myList.insert(2);
-        myList.insert(5);
-        Node current = myList.head;
+        myList.append(1);
+        myList.append(2);
+        myList.append(3);
+        myList.append(4);
+        myList.append(5);
+        myList.append(6);
 
+        myList.insertAfter(4,10);
+        myList.insertBefore(1,10);
+
+        Node current = myList.head;
         while (current != null) {
             System.out.println(current.value);
             current = current.next;
