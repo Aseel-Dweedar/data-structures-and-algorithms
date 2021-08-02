@@ -42,7 +42,7 @@ Returns: a string representing all the values in the Linked List, formatted as:
 
 ## Challenge Add Node At Last :
 
-**append()**: adds a new node with the given value to the end of the list
+**append(int)**: adds a new node with the given value to the end of the list
 
 ## Whiteboard Process
 
@@ -56,7 +56,7 @@ scape : O(2n)
 
 ## Challenge Add Node Before specific node:
 
-**insertBefore()**
+**insertBefore(int, int)**
 method to add a new node with the given new value immediately before the first node that has the value specified.
 
 ## Whiteboard Process
@@ -71,7 +71,7 @@ scape : O(2n)
 
 ## Challenge Add Node After specific node:
 
-**insertAfter()**
+**insertAfter(int , int)**
 method to add a new node with the given new value immediately after the first node that has the value specified
 
 ## Whiteboard Process
@@ -83,3 +83,18 @@ method to add a new node with the given new value immediately after the first no
 loop,
 time : O(n)
 scape : O(2n)
+
+## Challenge kth from end:
+
+**kthFromEnd(int)**
+write a method that Return the node’s value that is k (given number) places from the tail of the linked list.
+
+## Whiteboard Process
+
+![add after](./img/kthFromEnd.png)
+
+## Approach & Efficiency
+
+loop,
+time : O(2n)
+scape : O(n)
