@@ -43,34 +43,30 @@ public class BinarySearch {
         int[] arr14= {1,2,3,4,5};
         int n14 = 4;
 
-        BinarySearch(arr1 , n1 , 2);
-        BinarySearch(arr2 , n2, -1);
-        BinarySearch(arr3 , n3 , 6);
-        BinarySearch(arr4 , n4 , 0);
-        BinarySearch(arr5 , n5, -1);
-        BinarySearch(arr6 , n6, -1);
-        BinarySearch(arr7 , n7 , 0);
-        BinarySearch(arr8 , n8 , 4);
-        BinarySearch(arr9 , n9 , 0);
-        BinarySearch(arr10 ,n10, 2);
-        BinarySearch(arr11 ,n11, 1);
-        BinarySearch(arr12 ,n12, 0);
-        BinarySearch(arr13,n13, -1);
-        BinarySearch(arr14 ,n14, 3);
+        BinarySearch(arr1 , n1 );
+        BinarySearch(arr2 , n2);
+        BinarySearch(arr3 , n3 );
+        BinarySearch(arr4 , n4 );
+        BinarySearch(arr5 , n5);
+        BinarySearch(arr6 , n6);
+        BinarySearch(arr7 , n7 );
+        BinarySearch(arr8 , n8 );
+        BinarySearch(arr9 , n9 );
+        BinarySearch(arr10 ,n10);
+        BinarySearch(arr11 ,n11);
+        BinarySearch(arr12 ,n12);
+        BinarySearch(arr13,n13);
+        BinarySearch(arr14 ,n14);
 
     }
 
-    public static int BinarySearch(int[] arr , int n, int shouldBe) {
+    public static int BinarySearch(int[] arr , int n) {
         int idx = -1;
-        if (arr.length == 0) {
-            System.out.println(idx + " should be "+ shouldBe);
-            return idx;
-        }
+        if (arr.length == 0) return idx;
         if (arr.length <= 2) {
             for (int i = 0; i < arr.length; i++) {
                 if (n == arr[i]){
                     idx = i;
-                    System.out.println(idx + " should be "+ shouldBe);
                     return idx;
                 }
             }
@@ -89,6 +85,6 @@ public class BinarySearch {
                 leftIdx = arrMid+1;
             }
         }
-        System.out.println(idx + " should be "+ shouldBe);
+        System.out.println(idx);
         return idx;
     }}
