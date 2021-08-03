@@ -98,3 +98,18 @@ write a method that Return the node’s value that is k (given number) places fr
 loop,
 time : O(2n)
 scape : O(n)
+
+## Challenge Zip two linked lists:
+
+**zipLists(list1, list2)**
+Zip two linked lists together into one so that the nodes alternate between the two lists and return a reference to the head of the zipped list.
+
+## Whiteboard Process
+
+![add after](./img/zipLists.png)
+
+## Approach & Efficiency
+
+loop,
+time : O(n)
+scape : O(2n)
