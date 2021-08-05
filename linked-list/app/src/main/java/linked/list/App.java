@@ -7,11 +7,11 @@ public class App {
 
     public static void main(String[] args) {
 
-        LinkedList myList = new LinkedList();
+        LinkedList<Integer> myList = new LinkedList<Integer>();
         myList.append(1);
         myList.append(2);
         myList.append(3);
-        LinkedList myList2 = new LinkedList();
+        LinkedList<Integer> myList2 = new LinkedList<Integer>();
         myList2.append(7);
         myList2.append(8);
         myList2.append(9);
@@ -19,10 +19,12 @@ public class App {
         myList2.append(11);
         myList2.append(12);
 
-        LinkedList newZippedList = new LinkedList();
-        newZippedList.head = myList.zipLists(myList,myList2);
-        System.out.println(newZippedList);
+        myList.reverseList(myList2);
 
+//        LinkedList<Integer> newZippedList = new LinkedList<Integer>();
+//        newZippedList.head = myList.zipLists(myList,myList2);
+//        System.out.println(newZippedList);
+//
 //        System.out.println(myList.kthFromEnd(2));
 //        myList.insertAfter(4,10);
 //        myList.insertBefore(1,10);
