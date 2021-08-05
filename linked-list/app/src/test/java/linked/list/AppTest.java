@@ -8,13 +8,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
     @Test void emptyList() {
-        LinkedList testList = new LinkedList();
+        LinkedList<Integer> testList = new LinkedList<Integer>();
         assertEquals( "" , testList.toString() );
         assertEquals( null , testList.head );
     }
 
     @Test void propertyList() {
-        LinkedList testList = new LinkedList();
+        LinkedList<Integer> testList = new LinkedList<Integer>();
         testList.insert(3);
         testList.insert(2);
         testList.insert(8);
@@ -24,30 +24,30 @@ class AppTest {
         /* ----   OR    ---- */
         assertEquals( 2 , testList.head.next.value );
         assertEquals( 3 , testList.head.next.next.value );
-        assertEquals( null , testList.head.next.next.next );
+        assertNull(testList.head.next.next.next);
     }
 
     @Test void propertyHead() {
-        LinkedList testList1 = new LinkedList();
-        testList1.insert(0);
-        testList1.insert(2);
-        testList1.insert(15);
-        LinkedList testList2 = new LinkedList();
+        LinkedList<String > testList1 = new LinkedList<String >();
+        testList1.insert("0");
+        testList1.insert("2");
+        testList1.insert("15");
+        LinkedList<Integer> testList2 = new LinkedList<Integer>();
         testList2.insert(3);
         testList2.insert(2);
         testList2.insert(8);
-        LinkedList testList3 = new LinkedList();
+        LinkedList<Integer> testList3 = new LinkedList<Integer>();
         testList3.insert(1);
         testList3.insert(9);
         testList3.insert(10);
 
-        assertEquals( 15 , testList1.head.value );
+        assertEquals( "15" , testList1.head.value );
         assertEquals( 8 , testList2.head.value );
         assertEquals( 10 , testList3.head.value );
     }
 
     @Test void multipleNode() {
-        LinkedList testList = new LinkedList();
+        LinkedList<Integer> testList = new LinkedList<Integer>();
         testList.insert(15);
         testList.insert(70);
         testList.insert(90);
@@ -56,14 +56,14 @@ class AppTest {
     }
 
     @Test void includesTest() {
-        LinkedList testList = new LinkedList();
+        LinkedList<Integer> testList = new LinkedList<Integer>();
         testList.insert(15);
-        assertEquals( true , testList.includes(15) );
-        assertEquals( false , testList.includes(6) );
+        assertTrue(testList.includes(15));
+        assertFalse(testList.includes(6));
     }
 
     @Test void returnCollection () {
-        LinkedList testList = new LinkedList();
+        LinkedList<Integer> testList = new LinkedList<Integer>();
         testList.insert(1);
         testList.insert(0);
         testList.insert(9);
@@ -72,17 +72,17 @@ class AppTest {
     }
 
     @Test void appendTest () {
-        LinkedList testList = new LinkedList();
-        testList.insert(1);
-        testList.insert(0);
-        testList.insert(9);
-        testList.append(6);
+        LinkedList<String> testList = new LinkedList<String>();
+        testList.insert("1");
+        testList.insert("0");
+        testList.insert("9");
+        testList.append("6");
         String resultString = "{ 9 } -> { 0 } -> { 1 } -> { 6 } -> NULL";
         assertEquals( resultString , testList.toString() );
     }
 
     @Test void appendMultiTest () {
-        LinkedList testList = new LinkedList();
+        LinkedList<Integer> testList = new LinkedList<Integer>();
         testList.insert(1);
         testList.insert(0);
         testList.insert(9);
@@ -94,7 +94,7 @@ class AppTest {
     }
 
     @Test void beforeMiddleTest () {
-        LinkedList testList = new LinkedList();
+        LinkedList<Integer> testList = new LinkedList<Integer>();
         testList.append(6);
         testList.append(7);
         testList.append(8);
@@ -104,7 +104,7 @@ class AppTest {
     }
 
     @Test void beforeFirstTest () {
-        LinkedList testList = new LinkedList();
+        LinkedList<Integer> testList = new LinkedList<Integer>();
         testList.append(6);
         testList.append(7);
         testList.append(8);
@@ -114,7 +114,7 @@ class AppTest {
     }
 
     @Test void afterMiddleTest () {
-        LinkedList testList = new LinkedList();
+        LinkedList<Integer> testList = new LinkedList<Integer>();
         testList.append(6);
         testList.append(7);
         testList.append(8);
@@ -124,7 +124,7 @@ class AppTest {
     }
 
     @Test void afterLastTest () {
-        LinkedList testList = new LinkedList();
+        LinkedList<Integer> testList = new LinkedList<Integer>();
         testList.append(6);
         testList.append(7);
         testList.append(8);
@@ -134,7 +134,7 @@ class AppTest {
     }
 
     @Test void kGreaterThanLength () {
-        LinkedList testList = new LinkedList();
+        LinkedList<Integer> testList = new LinkedList<Integer>();
         testList.append(6);
         testList.append(7);
         testList.append(8);
@@ -144,7 +144,7 @@ class AppTest {
     }
 
     @Test void kSameLength () {
-        LinkedList testList = new LinkedList();
+        LinkedList<Integer> testList = new LinkedList<Integer>();
         testList.append(6);
         testList.append(7);
         testList.append(8);
@@ -154,7 +154,7 @@ class AppTest {
     }
 
     @Test void kNegative () {
-        LinkedList testList = new LinkedList();
+        LinkedList<Integer> testList = new LinkedList<Integer>();
         testList.append(6);
         testList.append(7);
         testList.append(8);
@@ -164,13 +164,13 @@ class AppTest {
     }
 
     @Test void listSize1 () {
-        LinkedList testList = new LinkedList();
+        LinkedList<Integer> testList = new LinkedList<Integer>();
         testList.append(6);
         assertEquals( "{6}" , testList.kthFromEnd(0) );
         assertEquals( "Exception" , testList.kthFromEnd(5) );
     }
     @Test void happyPath () {
-        LinkedList testList = new LinkedList();
+        LinkedList<Integer> testList = new LinkedList<Integer>();
         testList.append(6);
         testList.append(7);
         testList.append(8);
@@ -181,24 +181,24 @@ class AppTest {
 
     /* Test Zipped list if both lists are empty */
     @Test void zipBothEmpty () {
-        LinkedList testList1 = new LinkedList();
-        LinkedList testList2 = new LinkedList();
+        LinkedList<Integer> testList1 = new LinkedList<Integer>();
+        LinkedList<Integer> testList2 = new LinkedList<Integer>();
 
-        LinkedList newZippedList = new LinkedList();
+        LinkedList<Integer> newZippedList = new LinkedList<Integer>();
         newZippedList.head = testList1.zipLists(testList1,testList2);
 
-        assertEquals( null , newZippedList.head);
+        assertNull(newZippedList.head);
     }
 
     /* Test Zipped list if first list is empty */
     @Test void zipFirstIsEmpty () {
-        LinkedList testList1 = new LinkedList();
-        LinkedList testList2 = new LinkedList();
+        LinkedList<Integer> testList1 = new LinkedList<Integer>();
+        LinkedList<Integer> testList2 = new LinkedList<Integer>();
         testList2.append(7);
         testList2.append(8);
         testList2.append(9);
 
-        LinkedList newZippedList = new LinkedList();
+        LinkedList<Integer> newZippedList = new LinkedList<Integer>();
         newZippedList.head = testList1.zipLists(testList1,testList2);
         String result = "{ 7 } -> { 8 } -> { 9 } -> NULL";
 
@@ -207,13 +207,13 @@ class AppTest {
 
     /* Test Zipped list if second list is empty */
     @Test void zipSecondIsEmpty () {
-        LinkedList testList1 = new LinkedList();
+        LinkedList<Integer> testList1 = new LinkedList<Integer>();
         testList1.append(7);
         testList1.append(8);
         testList1.append(9);
-        LinkedList testList2 = new LinkedList();
+        LinkedList<Integer> testList2 = new LinkedList<Integer>();
 
-        LinkedList newZippedList = new LinkedList();
+        LinkedList<Integer> newZippedList = new LinkedList<Integer>();
         newZippedList.head = testList1.zipLists(testList1,testList2);
         String result = "{ 7 } -> { 8 } -> { 9 } -> NULL";
 
@@ -222,14 +222,14 @@ class AppTest {
 
     /* Test Zipped list if first list size larger than second list size */
     @Test void zipFirstSizeLarger () {
-        LinkedList testList1 = new LinkedList();
+        LinkedList<Integer> testList1 = new LinkedList<Integer>();
         testList1.append(1);
         testList1.append(2);
         testList1.append(3);
-        LinkedList testList2 = new LinkedList();
+        LinkedList<Integer> testList2 = new LinkedList<Integer>();
         testList2.append(7);
 
-        LinkedList newZippedList = new LinkedList();
+        LinkedList<Integer> newZippedList = new LinkedList<Integer>();
         newZippedList.head = testList1.zipLists(testList1,testList2);
         String result = "{ 1 } -> { 7 } -> { 2 } -> { 3 } -> NULL";
 
@@ -238,14 +238,14 @@ class AppTest {
 
     /* Test Zipped list if Second list size larger than first list size */
     @Test void zipSecondSizeLarger () {
-        LinkedList testList1 = new LinkedList();
+        LinkedList<Integer> testList1 = new LinkedList<Integer>();
         testList1.append(1);
-        LinkedList testList2 = new LinkedList();
+        LinkedList<Integer> testList2 = new LinkedList<Integer>();
         testList2.append(7);
         testList2.append(8);
         testList2.append(9);
 
-        LinkedList newZippedList = new LinkedList();
+        LinkedList<Integer> newZippedList = new LinkedList<Integer>();
         newZippedList.head = testList1.zipLists(testList1,testList2);
         String result = "{ 1 } -> { 7 } -> { 8 } -> { 9 } -> NULL";
 
@@ -254,16 +254,16 @@ class AppTest {
 
     /* Happy path */
     @Test void zipHappyPath () {
-        LinkedList testList1 = new LinkedList();
+        LinkedList<Integer> testList1 = new LinkedList<Integer>();
         testList1.append(1);
         testList1.append(2);
         testList1.append(3);
-        LinkedList testList2 = new LinkedList();
+        LinkedList<Integer> testList2 = new LinkedList<Integer>();
         testList2.append(7);
         testList2.append(8);
         testList2.append(9);
 
-        LinkedList newZippedList = new LinkedList();
+        LinkedList<Integer> newZippedList = new LinkedList<Integer>();
         newZippedList.head = testList1.zipLists(testList1,testList2);
         String result = "{ 1 } -> { 7 } -> { 2 } -> { 8 } -> { 3 } -> { 9 } -> NULL";
 
