@@ -114,38 +114,52 @@ public class LinkedList<T> {
         if (list1.head == null) return list2.head;
         if (list2.head == null) return list1.head;
 
-        LinkedList<T> newZippedList = new LinkedList<T>();
-        newZippedList.head = list1.head;
-
         Node<T> current = list1.head;
-        list1.head = list1.head.next;
+        Node<T> list1Current = current.next;
+        Node<T> list2Current = list2.head;
 
-        while (current != null && (list2.head != null || list1.head != null)) {
-            if (list2.head != null) {
-                current.next = list2.head;
-                list2.head = list2.head.next;
+        while (current != null && (list2Current != null || list1Current != null)) {
+            if (list2Current != null) {
+                current.next = list2Current;
+                list2Current = list2Current.next;
                 current = current.next;
             }
-            if (list1.head != null) {
-                current.next = list1.head;
-                list1.head = list1.head.next;
+            if (list1Current != null) {
+                current.next = list1Current;
+                list1Current =  list1Current.next;
                 current = current.next;
             }
         }
-        return newZippedList.head;
+        return list1.head;
     }
 
+    /* ------- Reverse List Canceled Solution --------- */
+//    public LinkedList<T> reverseList(LinkedList<T> list) {
+//        if (list.head == null) return null;
+//        Node<T> current = list.head;
+//        LinkedList<T> newList = new LinkedList<T>();
+//        while (current != null){
+//            Node<T> newInsertNode = new Node<T>(current.value);
+//            newInsertNode.next = newList.head;
+//            newList.head = newInsertNode;
+//            current = current.next;
+//        }
+//        System.out.println(newList);
+//        return newList;
+//    }
+
     public LinkedList<T> reverseList(LinkedList<T> list) {
-        if (list.head == null) return null;
+        if (list.head == null || list.head.next == null) return list;
         Node<T> current = list.head;
-        LinkedList<T> newList = new LinkedList<T>();
-        while (current != null){
-            Node<T> newInsertNode = new Node<T>(current.value);
-            newInsertNode.next = newList.head;
-            newList.head = newInsertNode;
-            current = current.next;
+        Node<T> nCurrent = current.next;
+        Node<T> pCurrent = list.head;
+        while (nCurrent != null){
+            current.next = nCurrent.next;
+            nCurrent.next = pCurrent;
+            pCurrent = nCurrent;
+            nCurrent = current.next;
         }
-        System.out.println(newList);
-        return newList;
+        list.head = pCurrent;
+        return list;
     }
 }
