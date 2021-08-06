@@ -11,6 +11,7 @@ public class App {
         myList.append(1);
         myList.append(2);
         myList.append(3);
+        myList.append(4);
         LinkedList<Integer> myList2 = new LinkedList<Integer>();
         myList2.append(7);
         myList2.append(8);
@@ -18,8 +19,15 @@ public class App {
         myList2.append(10);
         myList2.append(11);
         myList2.append(12);
+        myList2.append(13);
+        myList2.append(14);
+        myList2.append(15);
+        LinkedList<Integer> myList3 = new LinkedList<Integer>();
 
-        myList.reverseList(myList2);
+        System.out.println(myList.reverseList(myList2).toString());
+        System.out.println(myList.reverseList(myList).toString());
+        System.out.println(myList.reverseList(myList3).toString());
+
 
 //        LinkedList<Integer> newZippedList = new LinkedList<Integer>();
 //        newZippedList.head = myList.zipLists(myList,myList2);
