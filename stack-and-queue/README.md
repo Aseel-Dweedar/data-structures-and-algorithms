@@ -49,3 +49,31 @@ This object should be aware of a default empty value assigned to front when the 
 - `peek()`: Returns Value of the node located at the top of the queue. Should raise exception when called on empty queue.
 
 - `is empty()`: Returns Boolean indicating whether or not the queue is empty.
+
+## Challenge Pseudo Queue
+
+Create a new class called `pseudo queue`.
+this PseudoQueue class will implement our standard queue interface.
+Internally, utilize 2 Stack instances to create and manage the queue.
+
+`enqueue()` : Inserts value into the PseudoQueue, using a first-in, first-out approach.
+
+`dequeue()` : Extracts a value from the PseudoQueue, using a first-in, first-out approach.
+
+**Whiteboard Process**
+
+![stack-and-queue](./img/stack-queue-pseudo.png)
+
+**Approach & Efficiency**
+
+`enqueue()` : Inserts value into the PseudoQueue, using a first-in, first-out approach.
+
+Space: O(1);
+
+Time : O(1);
+
+`dequeue()` : Extracts a value from the PseudoQueue, using a first-in, first-out approach.
+
+Space: O(1);
+
+Time : O(n);
