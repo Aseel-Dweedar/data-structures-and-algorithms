@@ -2,7 +2,7 @@ public class BinarySearch {
     public static void main(String[] args) {
 
         int[] arr1 = {4, 8, 15, 16, 23, 42};
-        int n1 = 15;
+        int n1 = 80;
 
         int[] arr2 = {-131, -82,42};
         int n2 = -42;
@@ -41,26 +41,25 @@ public class BinarySearch {
         int n13 = 8;
 
         int[] arr14= {1,2,3,4,5};
-        int n14 = 4;
+        int n14 = 6;
 
         BinarySearch(arr1 , n1 );
-        BinarySearch(arr2 , n2);
-        BinarySearch(arr3 , n3 );
-        BinarySearch(arr4 , n4 );
-        BinarySearch(arr5 , n5);
-        BinarySearch(arr6 , n6);
-        BinarySearch(arr7 , n7 );
-        BinarySearch(arr8 , n8 );
-        BinarySearch(arr9 , n9 );
-        BinarySearch(arr10 ,n10);
-        BinarySearch(arr11 ,n11);
-        BinarySearch(arr12 ,n12);
-        BinarySearch(arr13,n13);
+//        BinarySearch(arr2 , n2);
+//        BinarySearch(arr3 , n3 );
+//        BinarySearch(arr4 , n4 );
+//        BinarySearch(arr5 , n5);
+//        BinarySearch(arr6 , n6);
+//        BinarySearch(arr7 , n7 );
+//        BinarySearch(arr8 , n8 );
+//        BinarySearch(arr9 , n9 );
+//        BinarySearch(arr10 ,n10);
+//        BinarySearch(arr11 ,n11);
+//        BinarySearch(arr12 ,n12);
+//        BinarySearch(arr13,n13);
         BinarySearch(arr14 ,n14);
-
     }
 
-    public static int BinarySearch(int[] arr , int n) {
+    public static int BinarySearch(int[] arr , int n ) {
         int idx = -1;
         if (arr.length == 0) return idx;
         if (arr.length <= 2) {
@@ -80,11 +79,11 @@ public class BinarySearch {
                 break;
             }
             if (n < arr[arrMid]) {
-                rigthIdx = arrMid-1;
+                rigthIdx = arrMid - 1;
             } else {
-                leftIdx = arrMid+1;
+                leftIdx = arrMid + 1;
             }
         }
-        System.out.println(idx);
+        System.out.println( idx );
         return idx;
     }}
