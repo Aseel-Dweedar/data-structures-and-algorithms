@@ -151,8 +151,45 @@ class AppTest {
 
         // Correct removing "4"
         assertEquals(4, test.dequeue());
+    }
+
+//    Animal shelter
+    @Test void animalShelter() {
+
+        AnimalShelter bothList = new AnimalShelter();
+
+        // Edge case "object is empty"
+        assertNull(bothList.toString());
+
+        // Add cats in order "first in first out"
+        bothList.enqueue(new Cat("tresa"));
+        bothList.enqueue(new  Cat("karaz"));
+        bothList.enqueue(new  Cat("mishmish"));
+        bothList.enqueue(new Cat("dodo"));
+        assertEquals( "Front = Cat :tresa -> Cat :karaz -> Cat :mishmish -> Cat :dodo -> Null",bothList.catList.toString());
+
+        // Add Dogs in order "first in first out"
+        bothList.enqueue(new Dog("boby"));
+        bothList.enqueue(new Dog("spaik"));
+        bothList.enqueue(new Dog("tere"));
+        assertEquals( "Front = Dog :boby -> Dog :spaik -> Dog :tere -> Null",bothList.dogList.toString());
+
+        // Add to both list
+        assertEquals( "{Dog List :Front = Dog :boby -> Dog :spaik -> Dog :tere -> Null} --- {Cat List :Front = Dog :boby -> Dog :spaik -> Dog :tere -> Null}" ,bothList.toString());
 
 
+        // dequeue from list in order "first in first out"
+        bothList.dequeue("cat");
+        bothList.dequeue("dog");
+        assertEquals( "Front = Dog :spaik -> Dog :tere -> Null",bothList.dogList.toString());
+        assertEquals( "Front = Cat :karaz -> Cat :mishmish -> Cat :dodo -> Null",bothList.catList.toString());
+
+        // Return: either a dog or a cat, based on preference.
+        assertEquals("Dog :spaik" , bothList.dequeue("dog").toString());
+        assertEquals("Cat :karaz" , bothList.dequeue("cat").toString());
+
+        // If pref is not "dog" or "cat" then return "null".
+        assertNull(bothList.dequeue("none"));
     }
 
 }
