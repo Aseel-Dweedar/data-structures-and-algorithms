@@ -77,3 +77,30 @@ Time : O(1);
 Space: O(1);
 
 Time : O(n);
+
+## Challenge Animal Shelter
+
+Create a class called AnimalShelter which holds only dogs and cats, using a first-in, first-out approach.
+
+`enqueue()` : animal can be either a dog or a cat object., using a first-in, first-out approach.
+
+`dequeue()` : Extracts a either a dog or a cat, based on preference, using a first-in, first-out approach.
+If pref is not "dog" or "cat" then return null.
+
+**Whiteboard Process**
+
+![stack-and-queue](./img/AnimalShelter.png)
+
+**Approach & Efficiency**
+
+`enqueue()` :
+
+Space: O(1);
+
+Time : O(1);
+
+`dequeue()` :
+
+Space: O(1);
+
+Time : O(1);

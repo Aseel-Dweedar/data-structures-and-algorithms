@@ -3,6 +3,9 @@
  */
 package stack.and.queue;
 
+import org.checkerframework.checker.units.qual.A;
+import org.checkerframework.checker.units.qual.C;
+
 import java.util.EmptyStackException;
 
 public class App {
@@ -39,16 +42,34 @@ public class App {
 
         /* ----------------------------------------------------------- */
 
-        PseudoQueue test = new PseudoQueue();
-        test.enqueue(5);
-        test.enqueue(3);
-        test.enqueue(2);
-        test.enqueue(4);
-        test.enqueue(6);
-        test.dequeue();
-        test.enqueue(10);
-        test.dequeue();
-        test.dequeue();
-        System.out.println(test.stack1.toString());
+//        PseudoQueue test = new PseudoQueue();
+//        test.enqueue(5);
+//        test.enqueue(3);
+//        test.enqueue(2);
+//        test.enqueue(4);
+//        test.enqueue(6);
+//        test.dequeue();
+//        test.enqueue(10);
+//        test.dequeue();
+//        test.dequeue();
+//        System.out.println(test.stack1.toString());
+
+        /* ----------------------------------------------------------- */
+
+        AnimalShelter bothList = new AnimalShelter();
+        System.out.println(bothList);
+        bothList.enqueue(new Cat("tresa"));
+        bothList.enqueue(new  Cat("karaz"));
+        bothList.enqueue(new  Cat("mishmish"));
+        bothList.enqueue(new Cat("dodo"));
+        bothList.enqueue(new Dog("boby"));
+        bothList.enqueue(new Dog("spaik"));
+        bothList.enqueue(new Dog("tere"));
+        bothList.dequeue("cat");
+        bothList.dequeue("dog");
+        bothList.dequeue("wow");
+
+        System.out.println(bothList.catList.toString());
+        System.out.println(bothList.dogList.toString());
     }
 }
