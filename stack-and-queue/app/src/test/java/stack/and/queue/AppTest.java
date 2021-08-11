@@ -5,6 +5,7 @@ package stack.and.queue;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import static stack.and.queue.App.brackets;
 
 class AppTest {
 
@@ -192,4 +193,37 @@ class AppTest {
         assertNull(bothList.dequeue("none"));
     }
 
+
+//    test method stack-queue-brackets
+    @Test void stackQueueBrackets() {
+
+        // If the String is empty return True -No brackets error-.
+        String testString = "";
+        assertTrue(brackets(testString));
+
+        // If the String has no brackets -No brackets error-.
+        testString = "Aseel";
+        assertTrue(brackets(testString));
+
+        // If the brackets is true.
+        testString = "dd ( c )";
+        assertTrue(brackets(testString));
+
+        // If the brackets is false.
+        testString = " ( { S } ] L )";
+        assertFalse(brackets(testString));
+
+        // False Happy path.
+        testString = "[ { ( { } ] )";
+        assertFalse(brackets(testString));
+
+        // True Happy path.
+        testString = "[[({( )})]]";
+        assertTrue(brackets(testString));
+
+        // True Happy path.
+        testString = "[[ Hi ]] ( wow )";
+        assertTrue(brackets(testString));
+
+    }
 }

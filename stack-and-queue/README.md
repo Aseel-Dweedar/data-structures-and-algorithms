@@ -104,3 +104,28 @@ Time : O(1);
 Space: O(1);
 
 Time : O(1);
+
+## Challenge Animal Shelter
+
+Write a function called validate brackets
+takes a String as an Arguments representing whether or not the brackets in the string are balanced, There are 3 types of brackets:
+
+- Round Brackets : ()
+
+- Square Brackets : []
+
+- Curly Brackets : {}
+
+**Whiteboard Process**
+
+![stack-and-queue](./img/stack-queue-Brackets.PNG)
+
+**Approach & Efficiency**
+
+For loop:
+
+Space: O(n);
+
+Create a stack :
+
+Time : O(n);

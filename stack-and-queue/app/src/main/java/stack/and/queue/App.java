@@ -6,6 +6,7 @@ package stack.and.queue;
 import org.checkerframework.checker.units.qual.A;
 import org.checkerframework.checker.units.qual.C;
 
+import java.util.ArrayList;
 import java.util.EmptyStackException;
 
 public class App {
@@ -56,20 +57,59 @@ public class App {
 
         /* ----------------------------------------------------------- */
 
-        AnimalShelter bothList = new AnimalShelter();
-        System.out.println(bothList);
-        bothList.enqueue(new Cat("tresa"));
-        bothList.enqueue(new  Cat("karaz"));
-        bothList.enqueue(new  Cat("mishmish"));
-        bothList.enqueue(new Cat("dodo"));
-        bothList.enqueue(new Dog("boby"));
-        bothList.enqueue(new Dog("spaik"));
-        bothList.enqueue(new Dog("tere"));
-        bothList.dequeue("cat");
-        bothList.dequeue("dog");
-        bothList.dequeue("wow");
+//        AnimalShelter bothList = new AnimalShelter();
+//        System.out.println(bothList);
+//        bothList.enqueue(new Cat("tresa"));
+//        bothList.enqueue(new  Cat("karaz"));
+//        bothList.enqueue(new  Cat("mishmish"));
+//        bothList.enqueue(new Cat("dodo"));
+//        bothList.enqueue(new Dog("boby"));
+//        bothList.enqueue(new Dog("spaik"));
+//        bothList.enqueue(new Dog("tere"));
+//        bothList.dequeue("cat");
+//        bothList.dequeue("dog");
+//        bothList.dequeue("wow");
+//
+//        System.out.println(bothList.catList.toString());
+//        System.out.println(bothList.dogList.toString());
 
-        System.out.println(bothList.catList.toString());
-        System.out.println(bothList.dogList.toString());
+        /* ----------------------------------------------------------- */
+
+        System.out.println( "True , while the result is --> " + brackets("[[[fe]]]"));
+        System.out.println( "True , while the result is --> " + brackets("(({{   }}))"));
+        System.out.println( "False , while the result is --> " + brackets("{()"));
+        System.out.println( "False , while the result is --> " + brackets("[({}]"));
+        System.out.println( "False , while the result is --> " + brackets("String )"));
+        System.out.println( "True , while the result is --> " + brackets(""));
+        System.out.println( "True , while the result is --> " + brackets("f"));
+        System.out.println( "False , while the result is --> " + brackets("f((}}"));
+
     }
+
+    public static boolean brackets(String bracketsString) {
+        if (bracketsString.isEmpty()) return true;
+
+        Stack<String> checkStack = new Stack<>();
+        String[] arrToCheck = bracketsString.split("");
+
+        for (String value: arrToCheck) {
+            if ((value.equals("}") || value.equals("]") || value.equals(")")) && checkStack.isEmpty()) {
+                return false;
+            }
+            if (value.equals("{") || value.equals("[") || value.equals("(")) {
+                checkStack.push(value);
+            } else if (value.equals("}")) {
+                if (checkStack.top.value.equals("{")) checkStack.pop();
+                else return false;
+            } else if (value.equals(")")) {
+                if (checkStack.top.value.equals("(")) checkStack.pop();
+                else return false;
+            } else if (value.equals("]")) {
+                if (checkStack.top.value.equals("[")) checkStack.pop();
+                else return false;
+            }
+        }
+        return checkStack.isEmpty();
+    }
+
 }
