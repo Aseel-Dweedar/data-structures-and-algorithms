@@ -3,6 +3,8 @@
  */
 package trees;
 
+import java.util.ArrayList;
+
 public class App {
 
     public static void main(String[] args) {
@@ -17,8 +19,8 @@ public class App {
         newTree.root.rightChild = node4;
         newTree.root.leftChild = node3;
 
-        System.out.println(newTree.preOrder(newTree.root));
-        System.out.println(newTree.maximumValue());
+//        System.out.println(newTree.preOrder(newTree.root));
+//        System.out.println(newTree.maximumValue());
         System.out.println("==================================");
 //        System.out.println(newTree.inOrder(newTree.root));
 //        System.out.println("==================================");
@@ -39,17 +41,17 @@ public class App {
         Node<Integer> searchNode7 = new Node<>(105);
         Node<Integer> searchNode6 = new Node<>(85, null, searchNode7);
         Node<Integer> searchNode4 = new Node<>(42, searchNode5, searchNode6);
-        binarySearchTree.root.leftChild =  searchNode3;
-        binarySearchTree.root.rightChild =  searchNode4;
+        binarySearchTree.root.leftChild = searchNode3;
+        binarySearchTree.root.rightChild = searchNode4;
 
 
-        binarySearchTree.add(15);
-        binarySearchTree.add(9);
-        binarySearchTree.add(28);
-        binarySearchTree.add(28);
-        binarySearchTree.add(-1);
-        System.out.println(binarySearchTree.preOrder(binarySearchTree.root));
-        System.out.println(binarySearchTree.maximumValue());
+//        binarySearchTree.add(15);
+//        binarySearchTree.add(9);
+//        binarySearchTree.add(28);
+//        binarySearchTree.add(28);
+//        binarySearchTree.add(-1);
+//        System.out.println(binarySearchTree.preOrder(binarySearchTree.root));
+//        System.out.println(binarySearchTree.maximumValue());
 //        System.out.println("==================================");
 //        System.out.println(binarySearchTree.inOrder(binarySearchTree.root));
 //        System.out.println("==================================");
@@ -60,5 +62,35 @@ public class App {
 //        System.out.println("False the result is : " + binarySearchTree.contains(-15));
 //        System.out.println("True the result is : " + binarySearchTree.contains(-1));
 //        System.out.println("True the result is : " + binarySearchTree.contains(23));
+
+        /* ---------------------------------------------------------------------------- */
+
+        System.out.println(breadthFirst(newTree));
+        System.out.println(breadthFirst(binarySearchTree));
     }
+
+    public static ArrayList<Integer> breadthFirst(BinaryTree<Integer> binaryTree) {
+        if (binaryTree.root == null) return null;
+
+        ArrayList<Integer> breadthFirstList = new ArrayList<>();
+        Queue<Integer> myQueue = new Queue<>();
+
+        myQueue.enqueue(binaryTree.root);
+
+        while (!myQueue.isEmpty()) {
+
+            Node<Integer> front = myQueue.dequeue();
+            breadthFirstList.add(front.value);
+
+            if (front.leftChild != null) {
+                myQueue.enqueue(front.leftChild);
+            }
+            if (front.rightChild != null) {
+                myQueue.enqueue(front.rightChild);
+            }
+        }
+
+        return breadthFirstList;
+    }
+
 }

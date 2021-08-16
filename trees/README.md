@@ -30,6 +30,8 @@ A Tree node is a component which may contain it’s own values, and references t
 
 - `maximumValue()`:Find the maximum value stored in the tree.
 
+- `breadthFirst()`: Write a function called breadth first, Returns list of all values in the tree, in the order they were encountered Traverse the input tree using a Breadth-first approach.
+
 **Binary Search Tree method (BST) :**
 
 - `Add()` : Takes a value and adds a new node with that value in the correct location in the binary search tree.
@@ -50,7 +52,7 @@ Time : O(n).
 
 Space : O(n).
 
-# Challenge Summary
+# Challenge Summary - maximumValue
 
 Write a function called maximumValue Find the maximum value stored in the tree.
 
@@ -62,3 +64,17 @@ Write a function called maximumValue Find the maximum value stored in the tree.
 
 time : O(n)
 scape : O(n)
+
+# Challenge Summary breadth-first
+
+Write a function called breadth first
+Return: list of all values in the tree, in the order they were encountered Traverse the input tree using a Breadth-first approach.
+
+## Whiteboard Process
+
+![max-tree](../trees/breadth-first.PNG)
+
+## Approach & Efficiency
+
+time : O(n)
+scape : O(W)
