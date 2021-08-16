@@ -7,27 +7,29 @@ public class App {
 
     public static void main(String[] args) {
 
-        BinaryTree<Integer> newTree = new BinaryTree<>();
+        BinaryTree<Integer> newTree = new BinaryTree<>(new Node<>(5));
 
         Node<Integer> node1 = new Node<>(2);
         Node<Integer> node2 = new Node<>(3);
         Node<Integer> node3 = new Node<>(1, node1, node2);
         Node<Integer> node5 = new Node<>(6);
         Node<Integer> node4 = new Node<>(4, node5, null);
-        Node<Integer> newTreeRoot = new Node<>(5, node3, node4);
+        newTree.root.rightChild = node4;
+        newTree.root.leftChild = node3;
 
-        System.out.println(newTree.preOrder(newTreeRoot));
+        System.out.println(newTree.preOrder(newTree.root));
+        System.out.println(newTree.maximumValue());
         System.out.println("==================================");
-        System.out.println(newTree.inOrder(newTreeRoot));
-        System.out.println("==================================");
-        System.out.println(newTree.postOrder(newTreeRoot));
-        System.out.println("==================================");
-        System.out.println(newTree.toString());
-        System.out.println("==================================");
+//        System.out.println(newTree.inOrder(newTree.root));
+//        System.out.println("==================================");
+//        System.out.println(newTree.postOrder(newTree.root));
+//        System.out.println("==================================");
+//        System.out.println(newTree.toString());
+//        System.out.println("==================================");
 
         /* ---------------------------------------------------------------------------- */
 
-        BinarySearchTree binarySearchTree = new BinarySearchTree();
+        BinarySearchTree binarySearchTree = new BinarySearchTree(new Node<>(23));
 
         Node<Integer> searchNode0 = new Node<>(22);
         Node<Integer> searchNode1 = new Node<>(4);
@@ -37,22 +39,26 @@ public class App {
         Node<Integer> searchNode7 = new Node<>(105);
         Node<Integer> searchNode6 = new Node<>(85, null, searchNode7);
         Node<Integer> searchNode4 = new Node<>(42, searchNode5, searchNode6);
-        binarySearchTree.root = new Node<>(23, searchNode3, searchNode4);
+        binarySearchTree.root.leftChild =  searchNode3;
+        binarySearchTree.root.rightChild =  searchNode4;
+
+
         binarySearchTree.add(15);
         binarySearchTree.add(9);
         binarySearchTree.add(28);
         binarySearchTree.add(28);
         binarySearchTree.add(-1);
         System.out.println(binarySearchTree.preOrder(binarySearchTree.root));
-        System.out.println("==================================");
-        System.out.println(binarySearchTree.inOrder(binarySearchTree.root));
-        System.out.println("==================================");
-        System.out.println(binarySearchTree.postOrder(binarySearchTree.root));
-        System.out.println("==================================");
-        System.out.println("False the result is : " + binarySearchTree.contains(7));
-        System.out.println("True the result is : " + binarySearchTree.contains(105));
-        System.out.println("False the result is : " + binarySearchTree.contains(-15));
-        System.out.println("True the result is : " + binarySearchTree.contains(-1));
-        System.out.println("True the result is : " + binarySearchTree.contains(23));
+        System.out.println(binarySearchTree.maximumValue());
+//        System.out.println("==================================");
+//        System.out.println(binarySearchTree.inOrder(binarySearchTree.root));
+//        System.out.println("==================================");
+//        System.out.println(binarySearchTree.postOrder(binarySearchTree.root));
+//        System.out.println("==================================");
+//        System.out.println("False the result is : " + binarySearchTree.contains(7));
+//        System.out.println("True the result is : " + binarySearchTree.contains(105));
+//        System.out.println("False the result is : " + binarySearchTree.contains(-15));
+//        System.out.println("True the result is : " + binarySearchTree.contains(-1));
+//        System.out.println("True the result is : " + binarySearchTree.contains(23));
     }
 }

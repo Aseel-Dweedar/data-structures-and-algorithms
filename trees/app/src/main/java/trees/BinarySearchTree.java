@@ -2,7 +2,9 @@ package trees;
 
 public class BinarySearchTree extends BinaryTree {
 
-    public Node<Integer> root;
+    public BinarySearchTree(Node root) {
+        super(root);
+    }
 
     public void add(Integer value) {
         if (root.value == null) {
