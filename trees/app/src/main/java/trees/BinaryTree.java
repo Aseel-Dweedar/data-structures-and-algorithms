@@ -8,6 +8,14 @@ public class BinaryTree<T> {
     public List<T> preOrderList = new ArrayList<>();
     public List<T> inOrderList = new ArrayList<>();
     public List<T> postOrderList = new ArrayList<>();
+    public Node<Integer> root;
+
+    public BinaryTree() {
+    }
+
+    public BinaryTree(Node<Integer> root) {
+        this.root = root;
+    }
 
     public List<T> preOrder(Node<T> root) {
         try {
@@ -42,6 +50,19 @@ public class BinaryTree<T> {
         return postOrderList;
     }
 
+    public int maximumValue() {
+        if (root == null) return 0;
+        if (root.leftChild == null || root.rightChild == null) return root.value;
+        int max = 0;
+        List<Integer> maxList = (List<Integer>) postOrder((Node<T>) root);
+        for (int i = 0; i < maxList.size(); i++) {
+            if (maxList.get(i) >= max) {
+                max = maxList.get(i);
+            }
+        }
+        return max;
+    }
+
     @Override
     public String toString() {
         if (preOrderList.isEmpty() && inOrderList.isEmpty() && postOrderList.isEmpty()) return "Empty List";
@@ -49,4 +70,5 @@ public class BinaryTree<T> {
                 ", inOrderList=" + inOrderList +
                 ", postOrderList=" + postOrderList;
     }
+
 }

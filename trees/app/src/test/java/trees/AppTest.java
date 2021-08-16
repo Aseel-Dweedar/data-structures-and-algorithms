@@ -14,47 +14,49 @@ class AppTest {
 
     // Can successfully instantiate an empty tree
     @Test void emptyTree() {
-        BinaryTree<Integer> newTree = new BinaryTree<>();
+        BinaryTree<Integer> newTree = new BinaryTree<>(new Node<>(null));
         assertTrue(newTree instanceof BinaryTree);
         assertEquals("Empty List" , newTree.toString());
     }
 
     // Can successfully instantiate a tree with a single root node
     @Test void instantiateRoot() {
-        BinaryTree<Integer> newTree = new BinaryTree<>();
-        Node<Integer> treeRoot = new Node<>(5);
+        BinaryTree<Integer> newTree = new BinaryTree<>(new Node<>(5));
 
         List<Integer> testList = new ArrayList<>();
         testList.add(5);
 
-        assertEquals(testList , newTree.inOrder(treeRoot));
-        assertEquals(5, treeRoot.value);
-        assertEquals(null , treeRoot.leftChild);
-        assertEquals(null , treeRoot.rightChild);
+        assertEquals(testList , newTree.inOrder(newTree.root));
+        assertEquals(5, newTree.root.value);
+        assertEquals(null , newTree.root.leftChild);
+        assertEquals(null , newTree.root.rightChild);
     }
 
     // Can successfully add a left child and right child to a single root node
     @Test void leftAndRightChild() {
-        BinaryTree<Integer> newTree = new BinaryTree<>();
+        BinaryTree<Integer> newTree = new BinaryTree<>(new Node<>(5));
         Node<Integer> node1 = new Node<>(3);
         Node<Integer> node2 = new Node<>(1);
-        Node<Integer> treeRoot = new Node<>(5 , node1 , node2);
-        assertEquals( 5 , treeRoot.value);
-        assertEquals( 3 , treeRoot.leftChild.value);
-        assertEquals( 1 , treeRoot.rightChild.value);
+        newTree.root.rightChild = node2;
+        newTree.root.leftChild = node1;
+
+        assertEquals( 5 , newTree.root.value);
+        assertEquals( 3 , newTree.root.leftChild.value);
+        assertEquals( 1 , newTree.root.rightChild.value);
     }
 
     // Can successfully return traversal
     @Test void traversalTest() {
 
-        BinaryTree<Integer> newTree = new BinaryTree<>();
+        BinaryTree<Integer> newTree = new BinaryTree<>(new Node<>(5));
 
         Node<Integer> node1 = new Node<>(2);
         Node<Integer> node2 = new Node<>(3);
         Node<Integer> node3 = new Node<>(1, node1, node2);
         Node<Integer> node5 = new Node<>(6);
         Node<Integer> node4 = new Node<>(4, node5, null);
-        Node<Integer> treeRoot = new Node<>(5, node3, node4);
+        newTree.root.rightChild = node4;
+        newTree.root.leftChild = node3;
 
         // Can successfully return a collection from a preorder traversal
         // Node order as perOrder  [5, 1, 2, 3, 4, 6]
@@ -65,7 +67,7 @@ class AppTest {
         preTestList.add(3);
         preTestList.add(4);
         preTestList.add(6);
-        assertEquals( preTestList , newTree.preOrder(treeRoot));
+        assertEquals( preTestList , newTree.preOrder(newTree.root));
 
         // Can successfully return a collection from a inOrder traversal
         // Node order as inOrder  [2, 1, 3, 5, 6, 4]
@@ -76,7 +78,7 @@ class AppTest {
         inTestList.add(5);
         inTestList.add(6);
         inTestList.add(4);
-        assertEquals( inTestList , newTree.inOrder(treeRoot));
+        assertEquals( inTestList , newTree.inOrder(newTree.root));
 
         // Can successfully return a collection from a postOrder traversal
         // Node order as postOrder  [2, 3, 1, 6, 4, 5]
@@ -87,11 +89,31 @@ class AppTest {
         postTestList.add(6);
         postTestList.add(4);
         postTestList.add(5);
-        assertEquals( postTestList , newTree.postOrder(treeRoot));
+        assertEquals( postTestList , newTree.postOrder(newTree.root));
 
         // Test all traversal
         String test = "preOrderList=[5, 1, 2, 3, 4, 6], inOrderList=[2, 1, 3, 5, 6, 4], postOrderList=[2, 3, 1, 6, 4, 5]";
         assertEquals(test , newTree.toString());
     }
 
+    @Test void maximumValueEmpty() {
+
+        // Test maximumValue if list is empty
+        BinaryTree<Integer> newTree = new BinaryTree<>();
+        assertEquals( 0 , newTree.maximumValue());
+
+        // Test maximumValue if list has only the root
+        newTree.root = new Node<>(5);
+        assertEquals( 5 , newTree.maximumValue());
+
+        // Test maximumValue in the happy path
+        Node<Integer> node1 = new Node<>(2);
+        Node<Integer> node2 = new Node<>(-5);
+        Node<Integer> node3 = new Node<>(1, node1, node2);
+        Node<Integer> node5 = new Node<>(6);
+        Node<Integer> node4 = new Node<>(4, node5, null);
+        newTree.root.rightChild = node4;
+        newTree.root.leftChild = node3;
+        assertEquals( 6, newTree.maximumValue());
+    }
 }

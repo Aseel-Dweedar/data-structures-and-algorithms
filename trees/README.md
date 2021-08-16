@@ -28,6 +28,8 @@ A Tree node is a component which may contain it’s own values, and references t
 
 - `postOrder()`: prioritize going through the depth (height) of the tree first in order **`left >> right >> root`** , returns an array of the values, ordered appropriately.
 
+- `maximumValue()`:Find the maximum value stored in the tree.
+
 **Binary Search Tree method (BST) :**
 
 - `Add()` : Takes a value and adds a new node with that value in the correct location in the binary search tree.
@@ -47,3 +49,16 @@ Space : O(n).
 Time : O(n).
 
 Space : O(n).
+
+# Challenge Summary
+
+Write a function called maximumValue Find the maximum value stored in the tree.
+
+## Whiteboard Process
+
+![max-tree](../trees/img/maximumValue.PNG)
+
+## Approach & Efficiency
+
+time : O(n)
+scape : O(n)
