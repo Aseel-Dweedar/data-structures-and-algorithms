@@ -116,4 +116,34 @@ class AppTest {
         newTree.root.leftChild = node3;
         assertEquals( 6, newTree.maximumValue());
     }
+
+    @Test void breadthFirst() {
+
+        // Test breadthFirst if list is empty
+        BinaryTree<Integer> newTree = new BinaryTree<>();
+        assertNull(App.breadthFirst(newTree));
+
+
+        // Test breadthFirst if the tree has only the root
+        newTree.root = new Node<>(5);
+        ArrayList<Integer> testList = new ArrayList<>();
+        testList.add(5);
+        assertEquals( testList , App.breadthFirst(newTree));
+
+
+        // Test breadthFirst in the happy path
+        Node<Integer> node1 = new Node<>(2);
+        Node<Integer> node2 = new Node<>(3);
+        Node<Integer> node3 = new Node<>(1, node1, node2);
+        Node<Integer> node5 = new Node<>(6);
+        Node<Integer> node4 = new Node<>(4, node5, null);
+        newTree.root.rightChild = node4;
+        newTree.root.leftChild = node3;
+        testList.add(1);
+        testList.add(4);
+        testList.add(2);
+        testList.add(3);
+        testList.add(6);
+        assertEquals( testList, App.breadthFirst(newTree));
+    }
 }
