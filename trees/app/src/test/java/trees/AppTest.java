@@ -146,4 +146,25 @@ class AppTest {
         testList.add(6);
         assertEquals( testList, App.breadthFirst(newTree));
     }
+
+    @Test void KTree() {
+        kAryTree root = new kAryTree(3, 0);
+        root.child[0] = new kAryTree(3, 2);
+        root.child[1] = new kAryTree(3, 3);
+        root.child[2] = new kAryTree(3, 5);
+        root.child[0].child[0] = new kAryTree(3, 12);
+        root.child[0].child[1] = new kAryTree(3, 22);
+        root.child[0].child[2] = new kAryTree(3, 15);
+
+        ArrayList<String> testList = new ArrayList<>();
+        testList.add("Fizz");
+        testList.add("\""+22+"\"");
+        testList.add("\""+2+"\"");
+        testList.add("FizzBuzz");
+        testList.add("Fizz");
+        testList.add("FizzBuzz");
+        testList.add("Buzz");
+        assertEquals( testList, root.treeFizzBuzz(root));
+    }
+
 }

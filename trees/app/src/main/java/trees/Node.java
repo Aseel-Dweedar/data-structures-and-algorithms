@@ -8,7 +8,7 @@ public class Node<T> {
         public Node rightChild;
         public Node next;
 
-        public Node(T value) {
+    public Node(T value) {
                 this.value = value;
         }
 

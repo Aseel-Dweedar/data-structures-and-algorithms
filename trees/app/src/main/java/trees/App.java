@@ -65,23 +65,27 @@ public class App {
 
         /* ---------------------------------------------------------------------------- */
 
-        System.out.println(breadthFirst(newTree));
-        System.out.println(breadthFirst(binarySearchTree));
+//        System.out.println(breadthFirst(newTree));
+//        System.out.println(breadthFirst(binarySearchTree));
+
+        kAryTree root = new kAryTree(3, 0);
+        root.child[0] = new kAryTree(3, 2);
+        root.child[1] = new kAryTree(3, 3);
+        root.child[2] = new kAryTree(3, 5);
+        root.child[0].child[0] = new kAryTree(3, 12);
+        root.child[0].child[1] = new kAryTree(3, 22);
+        root.child[0].child[2] = new kAryTree(3, 15);
+        System.out.println(root.treeFizzBuzz(root));
     }
 
     public static ArrayList<Integer> breadthFirst(BinaryTree<Integer> binaryTree) {
         if (binaryTree.root == null) return null;
-
         ArrayList<Integer> breadthFirstList = new ArrayList<>();
         Queue<Integer> myQueue = new Queue<>();
-
         myQueue.enqueue(binaryTree.root);
-
         while (!myQueue.isEmpty()) {
-
             Node<Integer> front = myQueue.dequeue();
             breadthFirstList.add(front.value);
-
             if (front.leftChild != null) {
                 myQueue.enqueue(front.leftChild);
             }
@@ -89,7 +93,6 @@ public class App {
                 myQueue.enqueue(front.rightChild);
             }
         }
-
         return breadthFirstList;
     }
 
