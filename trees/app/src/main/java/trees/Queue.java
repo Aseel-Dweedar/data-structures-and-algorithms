@@ -8,6 +8,7 @@ public class Queue<T> {
     public void enqueue(Node<T> node){
         if (front == null){
             front = node;
+            rear = node;
         } else {
             rear.next = node;
         }

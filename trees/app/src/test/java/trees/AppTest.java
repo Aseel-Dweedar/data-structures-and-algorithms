@@ -146,4 +146,39 @@ class AppTest {
         testList.add(6);
         assertEquals( testList, App.breadthFirst(newTree));
     }
+
+    @Test void KTree() {
+        Node<Integer> root = new Node();
+        ArrayList<String> testList = new ArrayList<>();
+
+        // Test while K-tree empty
+        assertEquals(testList , App.treeFizzBuzz(root));
+
+        // Test while K-tree has only the root
+        root.value = 0;
+        testList.add("FizzBuzz");
+        assertEquals(testList , App.treeFizzBuzz(root));
+
+        // Test K-tree in the happy path
+        root.child.add(new Node(2));
+        root.child.add(new Node(3));
+        root.child.add(new Node(5));
+        root.child.get(0).child.add(new Node(12));
+        root.child.get(0).child.add(new Node(22));
+        root.child.get(0).child.add(new Node(15));
+        root.child.get(1).child.add(new Node(20));
+        root.child.get(2).child.add(new Node(17));
+
+        testList.add("\""+2+"\"");
+        testList.add("Fizz");
+        testList.add("Buzz");
+        testList.add("Fizz");
+        testList.add("\""+22+"\"");
+        testList.add("FizzBuzz");
+        testList.add("Buzz");
+        testList.add("\""+17+"\"");
+
+        assertEquals( testList, App.treeFizzBuzz(root));
+    }
+
 }
