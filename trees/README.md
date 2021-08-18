@@ -72,9 +72,27 @@ Return: list of all values in the tree, in the order they were encountered Trave
 
 ## Whiteboard Process
 
-![max-tree](../trees/breadth-first.PNG)
+![max-tree](./img/breadth-first.PNG)
 
 ## Approach & Efficiency
 
 time : O(n)
+scape : O(W)
+
+# Challenge Summary breadth-first
+
+Write a fizzBuzzTree method that takes a k-ary tree and Returns a new tree with the same structure as the original, but the values modified as follows:
+
+- If the value is divisible by 3, replace the value with “Fizz”
+- If the value is divisible by 5, replace the value with “Buzz”
+- If the value is divisible by 3 and 5, replace the value with “FizzBuzz”
+- If the value is not divisible by 3 or 5, simply turn the number into a String.
+
+## Whiteboard Process
+
+![max-tree](./img/fizz-buzz-k-tree.PNG)
+
+## Approach & Efficiency
+
+time : O(n^)
 scape : O(W)

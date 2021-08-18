@@ -4,6 +4,7 @@
 package trees;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class App {
 
@@ -68,14 +69,36 @@ public class App {
 //        System.out.println(breadthFirst(newTree));
 //        System.out.println(breadthFirst(binarySearchTree));
 
-        kAryTree root = new kAryTree(3, 0);
-        root.child[0] = new kAryTree(3, 2);
-        root.child[1] = new kAryTree(3, 3);
-        root.child[2] = new kAryTree(3, 5);
-        root.child[0].child[0] = new kAryTree(3, 12);
-        root.child[0].child[1] = new kAryTree(3, 22);
-        root.child[0].child[2] = new kAryTree(3, 15);
-        System.out.println(root.treeFizzBuzz(root));
+        Node<Integer> root = new Node<Integer>(0);
+        root.child.add(new Node(2));
+        root.child.add(new Node(3));
+        root.child.add(new Node(5));
+        root.child.get(0).child.add(new Node(12));
+        root.child.get(0).child.add(new Node(22));
+        root.child.get(0).child.add(new Node(15));
+        System.out.println(treeFizzBuzz(root));
+    }
+
+    public static List treeFizzBuzz(Node<Integer> treeRoot) {
+        List<String> newList = new ArrayList<>();
+        if (treeRoot.value == null) return newList;
+        Queue myQueue = new Queue();
+        myQueue.enqueue(treeRoot);
+        while (!myQueue.isEmpty()) {
+            Node<Integer> test = myQueue.dequeue();
+            for (int i = 0; i < test.child.size(); i++)
+                myQueue.enqueue(test.child.get(i));
+            if (test.value % 3 == 0 && test.value % 5 == 0) {
+                newList.add("FizzBuzz");
+            } else if (test.value % 3 == 0) {
+                newList.add("Fizz");
+            } else if (test.value % 5 == 0) {
+                newList.add("Buzz");
+            } else {
+                newList.add("\"" + test.value + "\"");
+            }
+        }
+        return newList;
     }
 
     public static ArrayList<Integer> breadthFirst(BinaryTree<Integer> binaryTree) {
