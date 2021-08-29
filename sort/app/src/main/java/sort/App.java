@@ -9,11 +9,10 @@ public class App {
 
     public static void main(String[] args) {
         int[]  arr = {8,4,23,42,16,15};
-        insertionSort(arr);
-        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(insertionSort(arr)));
     }
 
-    public static void insertionSort(int[] arr) {
+    public static int[] insertionSort(int[] arr) {
         for (int i = 1; i < arr.length; i++) {
             int j = i - 1;
             int temp = arr[i];
@@ -23,6 +22,7 @@ public class App {
             }
             arr[j + 1] = temp;
         }
+        return arr;
     }
 
 }
