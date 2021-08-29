@@ -8,7 +8,7 @@ testing implementation of Insertion Sort based on the pseudocode provided.
 
 ## Whiteboard Process
 
-![Insertion-Sort](./img/Insertion-Sort.png)
+![Insertion-Sort](./img/Insertion-Sort.PNG)
 
 ## Approach & Efficiency
 
