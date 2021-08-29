@@ -46,23 +46,23 @@ public class App {
         binarySearchTree.root.rightChild = searchNode4;
 
 
-//        binarySearchTree.add(15);
-//        binarySearchTree.add(9);
-//        binarySearchTree.add(28);
-//        binarySearchTree.add(28);
-//        binarySearchTree.add(-1);
+        binarySearchTree.add(15);
+        binarySearchTree.add(9);
+        binarySearchTree.add(28);
+        binarySearchTree.add(28);
+        binarySearchTree.add(-1);
 //        System.out.println(binarySearchTree.preOrder(binarySearchTree.root));
 //        System.out.println(binarySearchTree.maximumValue());
 //        System.out.println("==================================");
-//        System.out.println(binarySearchTree.inOrder(binarySearchTree.root));
+        System.out.println(binarySearchTree.inOrder(binarySearchTree.root));
 //        System.out.println("==================================");
 //        System.out.println(binarySearchTree.postOrder(binarySearchTree.root));
 //        System.out.println("==================================");
-//        System.out.println("False the result is : " + binarySearchTree.contains(7));
-//        System.out.println("True the result is : " + binarySearchTree.contains(105));
-//        System.out.println("False the result is : " + binarySearchTree.contains(-15));
-//        System.out.println("True the result is : " + binarySearchTree.contains(-1));
-//        System.out.println("True the result is : " + binarySearchTree.contains(23));
+        System.out.println("False the result is : " + binarySearchTree.contains(7));
+        System.out.println("True the result is : " + binarySearchTree.contains(105));
+        System.out.println("False the result is : " + binarySearchTree.contains(-15));
+        System.out.println("True the result is : " + binarySearchTree.contains(-1));
+        System.out.println("True the result is : " + binarySearchTree.contains(23));
 
         /* ---------------------------------------------------------------------------- */
 
@@ -76,7 +76,7 @@ public class App {
         root.child.get(0).child.add(new Node(12));
         root.child.get(0).child.add(new Node(22));
         root.child.get(0).child.add(new Node(15));
-        System.out.println(treeFizzBuzz(root));
+//        System.out.println(treeFizzBuzz(root));
     }
 
     public static List treeFizzBuzz(Node<Integer> treeRoot) {
