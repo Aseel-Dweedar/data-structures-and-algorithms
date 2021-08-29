@@ -8,3 +8,4 @@
 | 4      | [Linked list](./linked-list/README.md)                 |
 | 5      | [Stack and Queue](./list2Current/README.md)            |
 | 6      | [Trees](./trees/README.md)                             |
+| 7      | [Sort](./sort/README.md)                             |
