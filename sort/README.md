@@ -36,7 +36,7 @@ testing implementation of Merge Sort based on the pseudocode provided.
 
 ## Whiteboard Process
 
-![Insertion-Sort](./img/merge-Sort.PNG)
+![merge-sort](./img/merge-sort.PNG)
 
 ## Approach & Efficiency
 
