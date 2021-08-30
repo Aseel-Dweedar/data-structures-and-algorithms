@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class App {
 
     public static void main(String[] args) {
-        int[] arr = {8, 4, 23, 42, 16,7, 15};
+        int[] arr = {8, 4, 23, 42, 16, 15};
 //        System.out.println(Arrays.toString(insertionSort(arr)));
         System.out.println(Arrays.toString(mergeSort(arr)));
     }
