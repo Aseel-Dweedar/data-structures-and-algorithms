@@ -62,7 +62,7 @@ while the length of the array is greater than 0 will call pertition method to fi
 
 will call the quick sort method using position and left value, call the pertition and find the new position, then call quick sort first with position and left value, then with position and right value.
 
-![3](./img/quick/quick-3.PNG)
+![3](./img/quick/quick-3.png)
 
 ### **Third part**
 
