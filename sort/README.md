@@ -47,3 +47,21 @@ for and while loop:
 - **Space: `O(n)`:**
 
 > **Full verification and Efficency in the [BLOG](./BLOG-Merge.md)**
+
+<br>
+
+# Quick Sort
+
+## Challenge Summary
+
+Sorting array using Quick Sort algorithm.
+
+Document explanation by creating a blog article that shows the step-by-step output after each iteration through some sort of visual.
+
+testing implementation of Quick Sort based on the pseudocode provided.
+
+## Whiteboard Process
+
+![merge-sort](./img/quick-sort.PNG)
+
+## Approach & Efficiency
