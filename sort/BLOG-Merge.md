@@ -4,7 +4,7 @@ Merge Sort is a Divide and Conquer algorithm. It divides the input array into tw
 
 ## Pseudocode
 
-```
+```java
 ALGORITHM Mergesort(arr)
     DECLARE n <-- arr.length
 
@@ -52,7 +52,7 @@ left => [8,4,23]
 
 Right => [42,16,15]
 
-![1](./img/1-merge.PNG)
+![1](./img/mereg/1-merge.PNG)
 
 **second step:**
 
@@ -64,13 +64,13 @@ Right => [4,23]
 
 than recall the the function in the left side of it [8]. and because it length is not grater than 1 will move to next step.
 
-![2](./img/2-merge.PNG)
+![2](./img/mereg/2-merge.PNG)
 
 **Third step:**
 
 will recall the function in the right side of the array [4,23]. and because it length is grater than 1 will divide it to left [4] and right [23], then call the function for the left [4] array and because it length is not grater than 1 will move to next step. and call the function for the right [23] array.and because it length is not grater than 1 will move to next step.
 
-![3](./img/3-merge.PNG)
+![3](./img/mereg/3-merge.PNG)
 
 **Fourth step:**
 
@@ -80,7 +80,7 @@ then Will call the marge function the left array main array [8, 4, 23]. then com
 
 the result a sorted left part of the main array [4,8,23].
 
-![4](./img/4-merge.PNG)
+![4](./img/mereg/4-merge.PNG)
 
 **Fifth step:**
 
@@ -92,13 +92,13 @@ Right => [16,15]
 
 than recall the the function in the left side of it [42]. and because it length is not grater than 1 will move to next step.
 
-![2](./img/5-merge.PNG)
+![5](./img/mereg/5-merge.PNG)
 
 **sixth step:**
 
 will recall the function in the right side of the array [16,15]. and because it length is grater than 1 will divide it to left [16] and right [15], then call the function for the left [16] array and because it length is not grater than 1 will move to next step. and call the function for the right [15] array.and because it length is not grater than 1 will move to next step.
 
-![3](./img/6-merge.PNG)
+![6](./img/mereg/6-merge.PNG)
 
 **seventh step:**
 
@@ -108,14 +108,14 @@ then Will call the marge function the right array of main array [42,15,16]. then
 
 the result a sorted right part of the main array [15,16,42].
 
-![4](./img/7-merge.PNG)
+![7](./img/mereg/7-merge.PNG)
 
 **eighth step:**
 
 Will call the marge function the main array [8,4,23,42,16,15]. then compare the values and re-assign the values from less to greatest in the array.
 the result a sorted right part of the main array [4,8,15,16,23,42].
 
-![4](./img/8-merge.PNG)
+![8](./img/mereg/8-merge.PNG)
 
 ## Efficency
 
