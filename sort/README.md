@@ -10,7 +10,7 @@ testing implementation of Insertion Sort based on the pseudocode provided.
 
 ## Whiteboard Process
 
-![Insertion-Sort](./img/Insertion-Sort.PNG)
+![Insertion-Sort](./img/insertion/Insertion-Sort.PNG)
 
 ## Approach & Efficiency
 
@@ -36,7 +36,7 @@ testing implementation of Merge Sort based on the pseudocode provided.
 
 ## Whiteboard Process
 
-![merge-sort](./img/merge-sort.PNG)
+![merge-sort](./img/mereg/merge-sort.PNG)
 
 ## Approach & Efficiency
 
@@ -46,7 +46,7 @@ for and while loop:
 
 - **Space: `O(n)`:**
 
-> **Full verification and Efficency in the [BLOG](./BLOG-Merge.md)**
+> **Full verification and Efficiency in the [BLOG](./BLOG-Merge.md)**
 
 <br>
 
@@ -62,6 +62,14 @@ testing implementation of Quick Sort based on the pseudocode provided.
 
 ## Whiteboard Process
 
-![merge-sort](./img/quick-sort.PNG)
+![merge-sort](./img/quick/quick-sort.PNG)
 
 ## Approach & Efficiency
+
+- **Time: `log(n)`:**
+
+- **Space: `O(1)`:**
+
+<br>
+
+> **Full verification and Efficiency in the [BLOG](./BLOG-quick.md)**
