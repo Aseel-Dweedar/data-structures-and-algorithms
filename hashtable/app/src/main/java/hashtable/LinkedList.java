@@ -1,12 +1,12 @@
 package hashtable;
 
-public class LinkedList<K,V> {
+public class LinkedList<String,V> {
 
-    Node<K,V> head;
+    Node<String,V> head;
 
-    public String toString(){
-        String result = " [ ";
-        Node<K,V> current = head;
+    public java.lang.String toString(){
+        java.lang.String result = " [ ";
+        Node<String,V> current = head;
         while (current != null) {
             result  += "{"+ current.key+ ":" + current.value + "} ";
             current = current.next;
