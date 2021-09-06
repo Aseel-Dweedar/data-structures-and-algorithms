@@ -2,13 +2,13 @@ package hashtable;
 
 import java.util.Arrays;
 
-public class HashTable<String, V> {
+public class HashTable<V> {
 
     public LinkedList[] hashTable = new LinkedList[10];
 
     public void add(String key, V value) {
         int idx = hash(key);
-        Node<String, V> nodeToAdd = new Node<String, V>(key, value);
+        Node<V> nodeToAdd = new Node<V>(key, value);
         if (hashTable[idx] != null) nodeToAdd.next = hashTable[idx].head;
         else hashTable[idx] = new LinkedList();
         hashTable[idx].head = nodeToAdd;
@@ -27,7 +27,7 @@ public class HashTable<String, V> {
         int idx = hash(key);
         if (hashTable[idx] == null) return null;
         if (key == hashTable[idx].head.key) return (V) hashTable[idx].head.value;
-        Node<String, V> current = hashTable[idx].head;
+        Node<V> current = hashTable[idx].head;
         while (current != null) {
             if (key == current.key) return current.value;
             current = current.next;
@@ -39,7 +39,7 @@ public class HashTable<String, V> {
         int idx = hash(key);
         if (hashTable[idx] == null) return false;
         if (key == hashTable[idx].head.key) return true;
-        Node<String, V> current = hashTable[idx].head;
+        Node<V> current = hashTable[idx].head;
         while (current != null) {
             if (key == current.key) return true;
             current = current.next;
@@ -47,14 +47,14 @@ public class HashTable<String, V> {
         return false;
     }
 
-    public java.lang.String printOneBucket(String key) {
+    public String printOneBucket(String key) {
         int idx = hash(key);
         if (hashTable[idx] == null) return null;
         return hashTable[idx].toString();
     }
 
     @Override
-    public java.lang.String toString() {
+    public String toString() {
         return "hashTable =" + Arrays.toString(hashTable);
     }
 }
