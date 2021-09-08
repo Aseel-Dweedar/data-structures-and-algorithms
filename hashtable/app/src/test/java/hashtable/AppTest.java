@@ -80,7 +80,7 @@ class AppTest {
         // if there is no common values in both trees
         tree2.root = new Node<>(45);
         ArrayList<Integer> emptyList = new ArrayList<>();
-        assertEquals( emptyList , App.treeIntersection(tree1, tree2));
+        assertEquals(emptyList, App.treeIntersection(tree1, tree2));
 
         /* ---------------------   implementation   ------------------ */
         Node<Integer> node1 = new Node<>(2);
@@ -101,10 +101,43 @@ class AppTest {
 
         // if there is a duplicated value in tree1 but not in the tree2 (3 shouldn't be add to arr)
         node4.rightChild = new Node(3);
-        assertEquals( "[1, 2, 4]" , App.treeIntersection(tree1, tree2).toString());
+        assertEquals("[1, 2, 4]", App.treeIntersection(tree1, tree2).toString());
 
         // if there is a duplicated value in tree2 inclusive in list1 (4 shouldn't be added twice to the arr)
         node10.rightChild = new Node<>(4);
-        assertEquals( "[1, 2, 4]" , App.treeIntersection(tree1, tree2).toString());
+        assertEquals("[1, 2, 4]", App.treeIntersection(tree1, tree2).toString());
+    }
+
+    @Test
+    void testLeftJoin() {
+
+        // if table 1 and table 2 is empty
+        HashTable table1 = new HashTable();
+        HashTable table2 = new HashTable();
+        ArrayList emptyList = new ArrayList();
+        assertEquals(emptyList, App.leftJoin(table1, table2));
+
+        // if table 2 is empty
+        table1.add("first", " 1 ");
+        table1.add("second", " 1 ");
+        assertEquals("[[first,  1 , NULL], [second,  1 , NULL]]", App.leftJoin(table1, table2).toString());
+
+        // if table 2 has keys in table 1
+        table2.add("first", " 2 ");
+        table2.add("second", " 2 ");
+        assertEquals("[[first,  1 ,  2 ], [second,  1 ,  2 ]]", App.leftJoin(table1, table2).toString());
+
+        // if the keys have the same hash index
+        table1.add("Third", " 1 ");
+        table1.add("forth", " 1 ");
+        table2.add("forth", " 2 ");
+        assertEquals(7, table1.hash("Third"));
+        assertEquals(7, table1.hash("forth"));
+        assertEquals("[[first,  1 ,  2 ], [second,  1 ,  2 ], [forth,  1 ,  2 ], [Third,  1 , NULL]]", App.leftJoin(table1, table2).toString());
+
+        // if table 2 has keys that is not in the table 1
+        table2.add("sixth", " 2 ");
+        table2.add("seventh", " 2 ");
+        assertEquals("[[first,  1 ,  2 ], [second,  1 ,  2 ], [forth,  1 ,  2 ], [Third,  1 , NULL]]", App.leftJoin(table1, table2).toString());
     }
 }

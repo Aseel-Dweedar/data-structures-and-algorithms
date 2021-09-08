@@ -85,3 +85,26 @@ Find all values found to be in 2 binary trees
 **Time Approach** : O(N) - for loop 2 separate times.
 
 **Space Approach** : O(N) - create hash map and arrayList.
+
+<br>
+
+# LEFT JOINs
+
+## Challenge Summary
+
+Write a function that LEFT JOINs two hashmaps into a single data structure.
+
+- Arguments: two hash maps
+  - The first parameter is a hashmap that has word strings as keys, and a synonym of the key as values.
+  - The second parameter is a hashmap that has word strings as keys, and antonyms of the key as values.
+- Return: The returned data structure that holds the results is up to you. It doesn’t need to exactly match the output below, so long as it achieves the LEFT JOIN logic
+
+## Whiteboard Process
+
+![left-join](./img/left-join.PNG)
+
+## Approach & Efficiency
+
+**Time Approach** : O(N) -for loop over the first table, internal while loop over the linked list.
+
+**Space Approach** : O(N) - create anw arraylist of array list hold all data in the table 1.
