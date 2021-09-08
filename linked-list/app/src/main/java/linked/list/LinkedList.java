@@ -4,7 +4,7 @@ public class LinkedList<T> {
 
     Node<T> head;
 
-    public void insert(T value)  {
+    public void insert(T value) {
         Node<T> newInsertNode = new Node<T>(value);
         if (head != null) {
             newInsertNode.next = head;
@@ -12,20 +12,20 @@ public class LinkedList<T> {
         head = newInsertNode;
     }
 
-    public boolean includes(T value){
+    public boolean includes(T value) {
         Node<T> current = head;
         while (current != null) {
-            if (value == current.value)return true;
+            if (value == current.value) return true;
             current = current.next;
         }
         return false;
     }
 
-    public String toString(){
+    public String toString() {
         String result = "";
         Node<T> current = head;
         while (current != null) {
-            result = result + "{ "+ current.value + " } -> ";
+            result = result + "{ " + current.value + " } -> ";
             if (current.next == null) {
                 result = result + "NULL";
                 return result;
@@ -35,7 +35,7 @@ public class LinkedList<T> {
         return result;
     }
 
-    public void append(T value)  {
+    public void append(T value) {
         Node<T> newInsertNode = new Node<T>(value);
         if (head == null) {
             head = newInsertNode;
@@ -44,7 +44,19 @@ public class LinkedList<T> {
             while (current.next != null) {
                 current = current.next;
             }
-                current.next = newInsertNode;
+            current.next = newInsertNode;
+        }
+    }
+
+    public void delete(T value) {
+        Node<T> current = head;
+        while (current.next != null) {
+            if (current.next.value == value) {
+                Node<T> testNode = current.next;
+                current.next = testNode.next;
+                break;
+            }
+            current = current.next;
         }
     }
 
@@ -98,9 +110,9 @@ public class LinkedList<T> {
             return "Exception";
         } else {
             current = head;
-            for (int i = 0; i <= counter-idx; i++) {
-                if (i == counter-idx) {
-                    return "{"+current.value+"}";
+            for (int i = 0; i <= counter - idx; i++) {
+                if (i == counter - idx) {
+                    return "{" + current.value + "}";
                 }
                 current = current.next;
             }
@@ -126,12 +138,15 @@ public class LinkedList<T> {
             }
             if (list1Current != null) {
                 current.next = list1Current;
-                list1Current =  list1Current.next;
+                list1Current = list1Current.next;
                 current = current.next;
             }
         }
         return list1.head;
     }
+
+
+
 
     /* ------- Reverse List Canceled Solution --------- */
 //    public LinkedList<T> reverseList(LinkedList<T> list) {
@@ -153,7 +168,7 @@ public class LinkedList<T> {
         Node<T> current = list.head;
         Node<T> nCurrent = current.next;
         Node<T> pCurrent = list.head;
-        while (nCurrent != null){
+        while (nCurrent != null) {
             current.next = nCurrent.next;
             nCurrent.next = pCurrent;
             pCurrent = nCurrent;

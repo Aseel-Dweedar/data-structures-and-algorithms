@@ -66,7 +66,7 @@ testing implementation of Quick Sort based on the pseudocode provided.
 
 ## Approach & Efficiency
 
-- **Time: `log(n)`:**
+- **Time: `O(n)`:**
 
 - **Space: `O(1)`:**
 

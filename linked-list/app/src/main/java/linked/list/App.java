@@ -23,10 +23,12 @@ public class App {
         myList2.append(14);
         myList2.append(15);
         LinkedList<Integer> myList3 = new LinkedList<Integer>();
+        myList2.delete(10);
+        System.out.println(myList2);
 
-        System.out.println(myList.reverseList(myList2).toString());
-        System.out.println(myList.reverseList(myList).toString());
-        System.out.println(myList.reverseList(myList3).toString());
+//        System.out.println(myList.reverseList(myList2).toString());
+//        System.out.println(myList.reverseList(myList).toString());
+//        System.out.println(myList.reverseList(myList3).toString());
 
 
 //        LinkedList<Integer> newZippedList = new LinkedList<Integer>();
