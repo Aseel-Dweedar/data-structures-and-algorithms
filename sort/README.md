@@ -68,7 +68,7 @@ testing implementation of Quick Sort based on the pseudocode provided.
 
 - **Time: `O(n)`:**
 
-- **Space: `O(1)`:**
+- **Space: `O(n)`:**
 
 <br>
 

@@ -6,6 +6,21 @@ public class BinarySearchTree extends BinaryTree {
         super(root);
     }
 
+    void insert(int key) {
+        root = insertRec(root, key);
+    }
+    Node insertRec(Node<Integer> root, int value) {
+        if (root == null) {
+            root = new Node(value);
+            return root;
+        }
+        if (value < root.value)
+            root.leftChild = insertRec(root.leftChild, value);
+        else if (value > root.value)
+            root.rightChild = insertRec(root.rightChild, value);
+        return root;
+    }
+
     public void add(Integer value) {
         if (root.value == null) {
             root = new Node<>(value);

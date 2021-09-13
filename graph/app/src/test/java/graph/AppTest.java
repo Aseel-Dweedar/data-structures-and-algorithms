@@ -41,4 +41,33 @@ class AppTest {
         assertEquals(2, myGraph.size());
 
     }
+
+    @Test
+    public void graphBreadthFirst() {
+
+        // if the graph is empty return null
+        Graph myGraph = new Graph();
+        assertNull(myGraph.breadthFirst(null));
+
+        // if we have one node with no edges return that node
+        myGraph.addNode("8");
+        assertEquals("[8]", myGraph.breadthFirst("8").toString());
+
+        // graph with only one node and one edge with itself return that node
+        myGraph.addEdge("8", "8");
+        assertEquals("[8]", myGraph.breadthFirst("8").toString());
+
+        // happy path
+        myGraph.addNode("2");
+        myGraph.addNode("1");
+        myGraph.addNode("9");
+        myGraph.addNode("7");
+        myGraph.addNode("5");
+        myGraph.addEdge("8" , "9");
+        myGraph.addEdge("8" , "2");
+        myGraph.addEdge("8" , "1");
+        myGraph.addEdge("5" , "1");
+        myGraph.addEdge("7" , "5");
+        assertEquals("[8, 9, 2, 1, 5, 7]", myGraph.breadthFirst("8").toString());
+    }
 }
