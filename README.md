@@ -9,5 +9,5 @@
 | 5      | [Stack and Queue](./list2Current/README.md)            |
 | 6      | [Trees](./trees/README.md)                             |
 | 7      | [Sort](./sort/README.md)                               |
-| 8      | [Hashtables](./Hashtable/README.md)                    |
+| 8      | [Hashtables](./hashtable/README.md)                    |
 | 9      | [Graph](./graph/README.md)                             |
