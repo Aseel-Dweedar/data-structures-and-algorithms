@@ -11,7 +11,6 @@ public class App {
     public static void main(String[] args) {
 
         BinaryTree<Integer> newTree = new BinaryTree<>(new Node<>(5));
-
         Node<Integer> node1 = new Node<>(2);
         Node<Integer> node2 = new Node<>(3);
         Node<Integer> node3 = new Node<>(1, node1, node2);
@@ -20,9 +19,24 @@ public class App {
         newTree.root.rightChild = node4;
         newTree.root.leftChild = node3;
 
+        BinaryTree<Integer> newTree1 = new BinaryTree<>(new Node<>(5));
+        Node<Integer> node11 = new Node<>(2);
+        Node<Integer> node22 = new Node<>(3);
+        Node<Integer> node33 = new Node<>(1, node11, node22);
+//        Node<Integer> node55 = new Node<>(6);
+//        Node<Integer> node44 = new Node<>(4, node55, null);
+//        newTree1.root.rightChild = new Node(4);
+        newTree1.root.leftChild = node33;
+
+        System.out.println(newTree.preOrder(newTree.root));
+//        System.out.println(newTree1.preOrder(newTree1.root));
+        System.out.println(newTree1.preOrder(MergeTrees(newTree.root,newTree1.root)));
+
+
+
 //        System.out.println(newTree.preOrder(newTree.root));
 //        System.out.println(newTree.maximumValue());
-        System.out.println("==================================");
+//        System.out.println("==================================");
 //        System.out.println(newTree.inOrder(newTree.root));
 //        System.out.println("==================================");
 //        System.out.println(newTree.postOrder(newTree.root));
@@ -54,15 +68,15 @@ public class App {
 //        System.out.println(binarySearchTree.preOrder(binarySearchTree.root));
 //        System.out.println(binarySearchTree.maximumValue());
 //        System.out.println("==================================");
-        System.out.println(binarySearchTree.inOrder(binarySearchTree.root));
+//        System.out.println(binarySearchTree.inOrder(binarySearchTree.root));
 //        System.out.println("==================================");
 //        System.out.println(binarySearchTree.postOrder(binarySearchTree.root));
 //        System.out.println("==================================");
-        System.out.println("False the result is : " + binarySearchTree.contains(7));
-        System.out.println("True the result is : " + binarySearchTree.contains(105));
-        System.out.println("False the result is : " + binarySearchTree.contains(-15));
-        System.out.println("True the result is : " + binarySearchTree.contains(-1));
-        System.out.println("True the result is : " + binarySearchTree.contains(23));
+//        System.out.println("False the result is : " + binarySearchTree.contains(7));
+//        System.out.println("True the result is : " + binarySearchTree.contains(105));
+//        System.out.println("False the result is : " + binarySearchTree.contains(-15));
+//        System.out.println("True the result is : " + binarySearchTree.contains(-1));
+//        System.out.println("True the result is : " + binarySearchTree.contains(23));
 
         /* ---------------------------------------------------------------------------- */
 
@@ -78,6 +92,48 @@ public class App {
         root.child.get(0).child.add(new Node(15));
 //        System.out.println(treeFizzBuzz(root));
     }
+
+    static Node MergeTrees(Node<Integer> t1, Node<Integer> t2) {
+        if (t1 == null) return t2;
+        if (t2 == null) return t1;
+        t1.value += t2.value;
+        t1.leftChild = MergeTrees(t1.leftChild, t2.leftChild);
+        t1.rightChild = MergeTrees(t1.rightChild, t2.rightChild);
+        return t1;
+    }
+
+    Node sortedArrayToBST(int arr[], int start, int end) {
+        if (start > end) return null;
+        int mid = (start + end) / 2;
+        Node node = new Node(arr[mid]);
+        node.leftChild = sortedArrayToBST(arr, start, mid - 1);
+        node.rightChild = sortedArrayToBST(arr, mid + 1, end);
+        return node;
+    }
+
+    public Node search(Node<Integer> root, int value) {
+        if (root==null || root.value == value)return root;
+        if (root.value < value) return search(root.rightChild, value);
+        return search(root.leftChild, value);
+    }
+
+    boolean identicalTrees(Node a, Node b) {
+        if (a == null && b == null) return true;
+        if (a != null && b != null)
+            return (a.value == b.value && identicalTrees(a.leftChild, b.leftChild) && identicalTrees(a.rightChild, b.rightChild));
+        return false;
+    }
+
+
+
+//    public static Node mereg(Node<Integer> t1 , Node<Integer> t2){
+//        if (t1 == null && t2 == null) return null;
+//        int value =  (t1 != null ? t1.value : 0 ) + (t2 != null ? t2.value : 0);
+//        Node newTree = new Node<Integer>( value);
+//        newTree.leftChild = mereg(t1.leftChild!= null? t1.leftChild:null,t2.leftChild!= null? t2.leftChild:null );
+//        newTree.rightChild = mereg(t1.rightChild!= null? t1.rightChild:null,t2.rightChild!= null? t2.rightChild:null );
+//        return newTree;
+//    }
 
     public static List treeFizzBuzz(Node<Integer> treeRoot) {
         List<String> newList = new ArrayList<>();

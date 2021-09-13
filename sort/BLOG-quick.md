@@ -76,4 +76,4 @@ we will get the sorted array, return it.
 
 - **Time: `O(n)`:**
 
-- **Space: `O(1)`:**
+- **Space: `O(n)`:**

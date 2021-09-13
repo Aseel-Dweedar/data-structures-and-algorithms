@@ -82,7 +82,7 @@ Find all values found to be in 2 binary trees
 
 ## Approach & Efficiency
 
-**Time Approach** : O(N) - for loop 2 separate times.
+**Time Approach** : O(2N) - for loop 2 separate times.
 
 **Space Approach** : O(N) - create hash map and arrayList.
 
@@ -105,6 +105,6 @@ Write a function that LEFT JOINs two hashmaps into a single data structure.
 
 ## Approach & Efficiency
 
-**Time Approach** : O(N) -for loop over the first table, internal while loop over the linked list.
+**Time Approach** : O(N^2) -for loop over the first table, internal while loop over the linked list.
 
 **Space Approach** : O(N) - create anw arraylist of array list hold all data in the table 1.

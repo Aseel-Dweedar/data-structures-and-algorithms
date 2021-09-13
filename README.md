@@ -10,3 +10,4 @@
 | 6      | [Trees](./trees/README.md)                             |
 | 7      | [Sort](./sort/README.md)                               |
 | 8      | [Hashtables](./Hashtable/README.md)                    |
+| 9      | [Graph](./graph/README.md)                             |

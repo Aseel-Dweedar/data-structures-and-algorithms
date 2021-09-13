@@ -13,9 +13,35 @@ Implement your own Graph. The graph should be represented as an adjacency list, 
 
 ## Approach & Efficiency
 
-**Time** : O(1)
+**add node**
 
-**Space** : O(N)
+- **Time** : O(1), no loops.
+
+- **Space** : O(n), create node with children's list.
+
+**add edge**
+
+- **Time** : O(1), no loops.
+
+- **Space** : O(1), no extra spaces.
+
+**get nodes**
+
+- **Time** : O(1), no loops.
+
+- **Space** : O(1), no extra spaces.
+
+**get neighbors**
+
+- **Time** : O(1), no loops.
+
+- **Space** : O(1), no extra spaces.
+
+**size**
+
+- **Time** : O(1), no loops.
+
+- **Space** : O(1), no extra spaces.
 
 ## API
 
@@ -45,3 +71,26 @@ Implement your own Graph. The graph should be represented as an adjacency list, 
 
 - Arguments: none
 - Returns the total number of nodes in the graph
+
+<hr>
+<br>
+
+## Graphs Breadth-first
+
+### Challenge
+
+write a method to traverse a graph using breadth-first
+
+- input -> Node
+
+- output -> A collection of nodes in the order they were visited.
+
+### Whiteboard Process
+
+![repeated-word](./img/graph-breadth-first.PNG)
+
+### Approach & Efficiency
+
+- time : O(n^2) - nested loop
+
+- scape : O(n) - create new list and Set.
