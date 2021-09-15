@@ -110,4 +110,33 @@ class AppTest {
         assertEquals("true, $180" , myGraph.businessTrip("8",trip1));
         assertEquals("true, $280" , myGraph.businessTrip("8",trip3));
     }
+
+    @Test
+    public void graphDepthFirst() {
+
+        // if the graph is empty return null
+        Graph myGraph = new Graph();
+        assertNull(myGraph.depthFirst(null));
+
+        // if we have one node with no edges return that node
+        myGraph.addNode("8");
+        assertEquals("[8]", myGraph.depthFirst("8").toString());
+
+        // graph with only one node and one edge with itself return that node
+        myGraph.addEdge("8", "8", 0);
+        assertEquals("[8]", myGraph.depthFirst("8").toString());
+
+        // happy path
+        myGraph.addNode("2");
+        myGraph.addNode("1");
+        myGraph.addNode("9");
+        myGraph.addNode("7");
+        myGraph.addNode("5");
+        myGraph.addEdge("8", "9", 10);
+        myGraph.addEdge("8", "2", 20);
+        myGraph.addEdge("8", "1", 20);
+        myGraph.addEdge("5", "1", 50);
+        myGraph.addEdge("7", "5", 70);
+        assertEquals("[8, 1, 5, 7, 2, 9]", myGraph.depthFirst("8").toString());
+    }
 }

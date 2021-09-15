@@ -115,3 +115,23 @@ Determine whether the trip is possible with direct flights, and how much it woul
 - time : O(n) - 1 for loop.
 
 - scape : O(1) - no extra spaces.
+
+## Graphs Depth-first
+
+### Challenge
+
+write a method to traverse a graph using Depth-first.
+
+- input -> Node
+
+- output -> A collection of nodes in their pre-order depth-first traversal order.
+
+### Whiteboard Process
+
+![repeated-word](./img/graph-depth-first.PNG)
+
+### Approach & Efficiency
+
+- time : O(n^2) - nested loop
+
+- scape : O(n) - create new list and Set.
