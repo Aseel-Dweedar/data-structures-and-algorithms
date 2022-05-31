@@ -28,14 +28,13 @@ public class App {
 //        newTree1.root.rightChild = new Node(4);
         newTree1.root.leftChild = node33;
 
-        System.out.println(newTree.preOrder(newTree.root));
+//        System.out.println(newTree.preOrder(newTree.root));
 //        System.out.println(newTree1.preOrder(newTree1.root));
-        System.out.println(newTree1.preOrder(MergeTrees(newTree.root,newTree1.root)));
-
+//        System.out.println(newTree1.preOrder(MergeTrees(newTree.root, newTree1.root)));
 
 
 //        System.out.println(newTree.preOrder(newTree.root));
-//        System.out.println(newTree.maximumValue());
+        System.out.println(newTree.maximumValue());
 //        System.out.println("==================================");
 //        System.out.println(newTree.inOrder(newTree.root));
 //        System.out.println("==================================");
@@ -72,11 +71,11 @@ public class App {
 //        System.out.println("==================================");
 //        System.out.println(binarySearchTree.postOrder(binarySearchTree.root));
 //        System.out.println("==================================");
-//        System.out.println("False the result is : " + binarySearchTree.contains(7));
-//        System.out.println("True the result is : " + binarySearchTree.contains(105));
-//        System.out.println("False the result is : " + binarySearchTree.contains(-15));
-//        System.out.println("True the result is : " + binarySearchTree.contains(-1));
-//        System.out.println("True the result is : " + binarySearchTree.contains(23));
+//        System.out.println("False the result is : " + binarySearchTree.contains( binarySearchTree.root , 7));
+//        System.out.println("True the result is : " + binarySearchTree.contains( binarySearchTree.root , 105));
+//        System.out.println("False the result is : " + binarySearchTree.contains( binarySearchTree.root , -15));
+//        System.out.println("True the result is : " + binarySearchTree.contains( binarySearchTree.root , -1));
+//        System.out.println("True the result is : " + binarySearchTree.contains( binarySearchTree.root , 23));
 
         /* ---------------------------------------------------------------------------- */
 
@@ -111,29 +110,12 @@ public class App {
         return node;
     }
 
-    public Node search(Node<Integer> root, int value) {
-        if (root==null || root.value == value)return root;
-        if (root.value < value) return search(root.rightChild, value);
-        return search(root.leftChild, value);
-    }
-
     boolean identicalTrees(Node a, Node b) {
         if (a == null && b == null) return true;
         if (a != null && b != null)
             return (a.value == b.value && identicalTrees(a.leftChild, b.leftChild) && identicalTrees(a.rightChild, b.rightChild));
         return false;
     }
-
-
-
-//    public static Node mereg(Node<Integer> t1 , Node<Integer> t2){
-//        if (t1 == null && t2 == null) return null;
-//        int value =  (t1 != null ? t1.value : 0 ) + (t2 != null ? t2.value : 0);
-//        Node newTree = new Node<Integer>( value);
-//        newTree.leftChild = mereg(t1.leftChild!= null? t1.leftChild:null,t2.leftChild!= null? t2.leftChild:null );
-//        newTree.rightChild = mereg(t1.rightChild!= null? t1.rightChild:null,t2.rightChild!= null? t2.rightChild:null );
-//        return newTree;
-//    }
 
     public static List treeFizzBuzz(Node<Integer> treeRoot) {
         List<String> newList = new ArrayList<>();

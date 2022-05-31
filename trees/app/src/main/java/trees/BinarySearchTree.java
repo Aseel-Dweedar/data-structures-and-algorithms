@@ -1,5 +1,7 @@
 package trees;
 
+import java.util.Objects;
+
 public class BinarySearchTree extends BinaryTree {
 
     public BinarySearchTree(Node root) {
@@ -9,6 +11,7 @@ public class BinarySearchTree extends BinaryTree {
     void insert(int key) {
         root = insertRec(root, key);
     }
+
     Node insertRec(Node<Integer> root, int value) {
         if (root == null) {
             root = new Node(value);
@@ -39,19 +42,26 @@ public class BinarySearchTree extends BinaryTree {
         }
     }
 
-    public boolean contains(Integer value) {
-        if (root == null) return false;
-        if (value.equals(root.value)) return true;
+//    public boolean contains(Integer value) {
+//        if (root == null) return false;
+//        if (value.equals(root.value)) return true;
+//
+//        Node<Integer> current = root;
+//        while (current.leftChild != null || current.rightChild != null) {
+//            if (value < current.value && current.leftChild != null) {
+//                current = current.leftChild;
+//            } else if (value > current.value && current.rightChild != null) {
+//                current = current.rightChild;
+//            } else return false;
+//            if (value.equals(current.value)) return true;
+//        }
+//        return false;
+//    }
 
-        Node<Integer> current = root;
-        while (current.leftChild != null || current.rightChild != null) {
-            if (value < current.value && current.leftChild != null) {
-                current = current.leftChild;
-            } else if (value > current.value && current.rightChild != null) {
-                current = current.rightChild;
-            } else return false;
-            if (value.equals(current.value)) return true;
-        }
-        return false;
+    public boolean contains(Node<Integer> treeRoot, Integer value) {
+        if (treeRoot == null) return false;
+        if (Objects.equals(treeRoot.value, value)) return true;
+        if (value < treeRoot.value) return contains(treeRoot.leftChild, value);
+        return contains(treeRoot.rightChild, value);
     }
 }

@@ -43,6 +43,8 @@ public class App {
         arr[low] = temp;
     }
 
+    /*****************************************************************************************************/
+
     public static int[] insertionSort(int[] arr) {
         for (int i = 1; i < arr.length; i++) {
             int j = i - 1;
@@ -55,6 +57,8 @@ public class App {
         }
         return arr;
     }
+    
+    /*****************************************************************************************************/
 
     public static int[] mergeSort(int[] arr) {
         int n = arr.length;
